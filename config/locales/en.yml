@@ -1,0 +1,59 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  terms: "Terms of Use"
+  politics: "Politics"
+  about_us_title: "About Gotham"
+  about_us: "Welcome to Gotham Promotion - a company dedicated to promoting combat sports and supporting the next generation of fighters.
+    \n\r
+    Our mission is to create a platform where enthusiasts and professionals can showcase their skills and achieve new heights in their careers. We host events in various formats, including MMA, Jiu-Jitsu, and Judo, and provide a safe and fair environment for our fighters.
+    \n\r
+    At Gotham Promotion, we believe in investing in the future of combat sports. That's why we offer opportunities for ambitious fighters to train and resources for coaches and teams to improve their skills and strategies.
+    \n\r
+    We strive for excellence in all aspects of our business, from the quality of our events to the level of customer service. Join us in our mission to elevate combat sports and discover the new generation of champions.
+    \n\r
+    At Gotham Promotion, we are passionate about creating a platform for ambitious fighters to showcase their skills and advance their careers in combat sports. We understand the hard work and dedication required for successful performance as a fighter and aim to support our athletes at every stage.
+    \n\r
+    Our team at Gotham Promotion consists of experienced professionals who are dedicated to ensuring that every event we organize is safe, fair, and competitive. We work closely with regulatory bodies to ensure that our events comply with all rules and regulations governing combat sports.
+    \n\r
+    At Gotham Promotion, we believe that martial arts are not just about physical strength and skill, but also mental endurance, discipline, and respect. That's why we actively promote these values both inside and outside the ring. We strive to create a positive and supportive community for all fighters and martial arts enthusiasts.
+    \n\r
+    Whether you are an aspiring fighter looking to take your career to the next level or a martial arts fan seeking exciting and competitive events, Gotham Promotion is the place to find everything you need. Join us in our mission to bring in the new generation of champions and take combat sports to the next level!"
+  blog: "Blog"
+  blog_title: "Articles will be here"
+  home: "Home"
+  en: "English"
+  ru: "Русский"
+  pl: "Polski"
+  es: "Español"
+  

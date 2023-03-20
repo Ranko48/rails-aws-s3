@@ -1,0 +1,194 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+ @import "font-awesome";
+ @import "bootstrap/scss/bootstrap";
+
+
+* {
+  // border: 1px white dashed;
+}
+
+body {
+  font-size: 1.4em;
+  font-family: 'Alumni Sans', sans-serif;
+  background-image: url("hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #232122;
+  color: white;
+}
+
+.icons-lang {
+  display: flex;
+}
+
+.article-text {
+  height: 400px;
+  border: 2px white solid;
+}
+
+.main-title {
+  font-size: 3em;
+}
+
+.contact-icon {
+  margin-right: 8px;
+  color: red;
+}
+.cont-lang-block {
+  display: flex;
+  align-items: baseline;
+}
+
+.container {
+  // max-width: 100%;
+  // padding-left: 0;
+  // padding-right: 0;
+}
+
+.logo-img {
+  margin-top: 5px;
+  height: 80px;
+  position: absolute;
+
+  &:hover {
+  height: 100px;
+  transition: all ease .2s;
+
+  }
+}
+
+.navbar-brand {
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.lang-icon {
+  margin-bottom: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-menu {
+  border-radius: 3px !important;
+}
+
+.lang-menu[data-bs-popper] {
+  left: -60%;
+}
+
+.about-us-text {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.burger {
+  justify-content: center !important;
+}
+
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.button.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.hero-section {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center center;
+}
+
+.navbar-row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 0, 0, 0.943);
+  font-weight: bold;
+  font-size: 8rem;
+}
+
+@media (max-width: 968px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+.parallax-section {
+  background-image: url("hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  &:hover {
+    color: red !important;
+    text-decoration: underline;
+    transition: all ease .4s;
+  }
+}

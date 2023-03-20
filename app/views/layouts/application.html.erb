@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gotham</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= render "layouts/navigation" %>
+    <% if action_name == "main" %>
+      <div class="parallax-section">
+        <div class="hero-section" data-parallax="scroll" data-speed="0.1">
+          <div class="hero-image"></div>
+          <h1 class="hero-title position-absolute top-100 start-50 translate-middle"><%= t "unleash" %></h1>
+        </div>
+      </div>
+      <% else %>
+        <hr>
+    <% end %>
+
+    <div class="container">
+<br>
+      <%= yield %>
+<br>
+    </div>
+<br>
+<div>
+<br>
+</div>
+    <h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+<h2>ASASAS</h2>
+    <br>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Получаем элементы заголовка и скрытого текста
+        var heading = document.querySelector(".heading");
+        var hiddenText = document.querySelector(".hidden-text");
+
+        // Добавляем обработчик события клика на заголовке
+        heading.addEventListener("click", function() {
+          // Переключаем класс `hidden` у скрытого текста
+              hiddenText.classList.toggle("hidden");
+
+        });
+      });
+      function parallax() {
+        var section = document.querySelector('.parallax-section');
+        var y = window.pageYOffset;
+        var height = section.offsetHeight;
+        if (y < height) {
+          section.style.backgroundPosition = '0% ' + (10 + y/4) + '%';
+        }
+      }
+
+      window.addEventListener('scroll', parallax);
+
+    </script>
+  </body>
+</html>
