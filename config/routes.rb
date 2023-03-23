@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :articles
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root to: 'pages#main'
 

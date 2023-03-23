@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def blog
+    @articles = Article.all
   end
 
   def politics
