@@ -6,7 +6,7 @@
       </a>
     </div>
 
-    <a class="navbar-brand text-white" href="/"><h2 class="main-title">GOTHAM PROMOTION</h2></a>
+    <a class="navbar-brand text-white" href="/"><h2 class="main-title">Gotham Promotion</h2></a>
 
     <div class="icons-lang mx-4">
 
@@ -26,8 +26,8 @@
         <li>
           <a href = "mailto: drminingco@gmail.com", target="_blank", title="Email Us"><i class="fa fa-envelope contact-icon"></i></a>
         </li>
-        <li class="dropdown">
-          <%= link_to '#', class: 'nav-link px-2 dropdown-toggle text-white',
+        <li class="dropdown", id="lang-selector">
+          <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white',
             data: {"bs-toggle": 'dropdown'} do %>
             <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
             <%= image_tag "#{locale}.png", class: "lang-icon" %>
