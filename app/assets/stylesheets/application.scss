@@ -34,10 +34,34 @@ body {
   display: flex;
 }
 
+.red {
+  color: red;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .article-text {
   height: 400px;
   border: 2px white solid;
 }
+
+.article-title {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
+
+.article-description-block {
+  margin: 1rem 4rem;
+  padding: 1em 0em;
+}
+
+.art-index-carousel {
+  height: 200px;
+}
+
 
 .main-title {
   // margin-top: 18px;
@@ -218,4 +242,19 @@ body {
     text-decoration: underline;
     transition: all ease .4s;
   }
+}
+
+.carousel-inner {
+  text-align: center;
+  .img {
+    max-height: 500px;
+  }
+}
+
+.carousel-photo {
+  height: 500px;
+}
+
+.carousel-photo-for-art-index {
+  height: 200px;
 }
