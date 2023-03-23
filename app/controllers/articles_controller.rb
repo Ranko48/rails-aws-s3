@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    @new_photo = @article.photos.build(params[:photo])
   end
   
   def new

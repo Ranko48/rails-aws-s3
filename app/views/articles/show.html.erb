@@ -1,5 +1,21 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.description %></p>
-<p><%= "By #{@article.user.name}" %></p>
-<%= link_to "Edit", edit_article_path(@article) %>
-<%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+<p><%= link_to I18n.t("articles_list"), blog_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <h1 class="article-title"><%= @article.title %></h1></p>
+
+<% if @article.photos.count != 0 %>
+  <%= render partial: 'carousel' %>
+<% end %>
+
+<%= simple_format (@article.description), class:"article-description-block" %>
+
+<!-- <p><%= "By #{@article.user.name}" %></p> -->
+
+<%#= render partial: 'photo', collection: @article.photos.except(@new_photo) %>
+
+<% if current_user.admin? %>
+  <br>
+  <hr>
+  <div class="article-photo-form">
+    <%= render partial: 'photos/form', locals: {photo: @new_photo || @article.photos.build} %>
+  </div>
+  <%= link_to "Edit", edit_article_path(@article) %>
+  <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
