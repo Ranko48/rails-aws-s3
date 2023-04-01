@@ -6,7 +6,7 @@
       </a>
     </div>
 
-    <a class="navbar-brand text-white" href="/"><h2 class="main-title">Gotham Promotion</h2></a>
+    <a class="navbar-brand text-white" href="/"><h2 class="main-title text-decoration-underline">Gotham Promotion</h2></a>
 
     <div class="icons-lang mx-4">
 
@@ -79,18 +79,17 @@
           <%= link_to I18n.t("blog"), blog_path, class:"nav-link active text-white" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Fighters</a>
+          <%= link_to I18n.t("fighters"), fighters_path, class:"nav-link active text-white" %>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Events
-          </a>
+          <%= link_to "Events", events_path, class: "nav-link dropdown-toggle text-white", role: "button", "data-bs-toggle" => "dropdown", "aria-expanded" => "false" %>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Gotham Event #3</a></li>
-            <li><a class="dropdown-item" href="#">Gotham Event #2</a></li>
-            <li><a class="dropdown-item" href="#">Gotham Event #1</a></li>
+            <% @last_events.each do |event| %>
+              <li><%= link_to event.title, event_path(event), class: "dropdown-item" %></li>
+            <% end %>
           </ul>
         </li>
+
       </ul>
     </div>
   </div>

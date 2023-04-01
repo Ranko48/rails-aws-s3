@@ -1,0 +1,35 @@
+<%= form_with model: @fight, local: true, class: "row g-3" do |form| %>
+  <% if @fight.errors.any? %>
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading"><%= pluralize(@fight.errors.count, "error") %> prohibited this fight from being saved:</h4>
+        <ul>
+          <% @fight.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-md-6">
+    <%= form.label :event_id, class: "form-label" %>
+    <%= form.collection_select(:event_id, Event.all, :id, :title, { prompt: "Select an event" }, class: "form-select") %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.label :fighter1_id, class: "form-label" %>
+    <%= form.collection_select(:fighter1_id, Fighter.all, :id, :name, { prompt: "Select fighter 1" }, class: "form-select") %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.label :fighter2_id, class: "form-label" %>
+    <%= form.collection_select(:fighter2_id, Fighter.all, :id, :name, { prompt: "Select fighter 2" }, class: "form-select") %>
+  </div>
+
+  <div class="col-md-6">
+    <div class="d-grid">
+      <%= form.submit "Save fight", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

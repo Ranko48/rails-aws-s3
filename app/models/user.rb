@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # before_action :set_current_user, except: [:show]
 
   has_many :articles, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
   validates :name, :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }

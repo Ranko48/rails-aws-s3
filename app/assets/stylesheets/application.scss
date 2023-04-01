@@ -42,9 +42,32 @@ body {
   }
 }
 
-.article-text {
+.merch-block {
+  background-color: white;
+  max-width: 30%;
   height: 400px;
-  border: 2px white solid;
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.us-us {
+  display: flex;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.us-block {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  img {
+    height: 100%;
+    object-fit: contain;
+
+  }
+
 }
 
 .article-title {
@@ -66,12 +89,14 @@ body {
 .main-title {
   // margin-top: 18px;
   // font-size: 3em;
-  font-family: 'Augusta', sans-serif;
-  font-size: 60px;
+  color: red;
+  position: relative;
+  font-family: 'Headline Text', sans-serif;
+  font-size: 80px;
   font-weight: 130%;
   left: 12%;
-  letter-spacing: 6px;
-  background: -webkit-linear-gradient(#ebb9b9, #ed0404);
+  letter-spacing: 9px;
+  background: -webkit-linear-gradient(#ff0000, #ff6666 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -102,11 +127,11 @@ body {
 
 .logo-img {
   margin-top: 5px;
-  height: 80px;
+  height: 90px;
   position: absolute;
 
   &:hover {
-  height: 100px;
+  height: 110px;
   transition: all ease .2s;
 
   }
@@ -195,9 +220,10 @@ body {
 .hero-title {
   width: 100%;
   text-align: center;
+  letter-spacing: 12px;
   color: rgba(255, 0, 0, 0.943);
   font-weight: bold;
-  font-size: 8rem;
+  font-size: 5rem;
 }
 
 @media (max-width: 968px) {
@@ -237,6 +263,8 @@ body {
 }
 
 .nav-link {
+  color: white !important;
+
   &:hover {
     color: red !important;
     text-decoration: underline;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_23_132304) do
+ActiveRecord::Schema.define(version: 2023_03_28_164928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,47 @@ ActiveRecord::Schema.define(version: 2023_03_23_132304) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fight_participants", force: :cascade do |t|
+    t.bigint "fight_id", null: false
+    t.bigint "fighter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fight_id"], name: "index_fight_participants_on_fight_id"
+    t.index ["fighter_id"], name: "index_fight_participants_on_fighter_id"
+  end
+
+  create_table "fighters", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.float "weight"
+    t.string "city_of_origin"
+    t.string "club"
+    t.string "professional_record"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fights", force: :cascade do |t|
+    t.bigint "fighter1_id"
+    t.bigint "fighter2_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "event_id", null: false
+    t.string "weight_class"
+    t.boolean "finished"
+    t.index ["event_id"], name: "index_fights_on_event_id"
+    t.index ["fighter1_id"], name: "index_fights_on_fighter1_id"
+    t.index ["fighter2_id"], name: "index_fights_on_fighter2_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -49,6 +90,11 @@ ActiveRecord::Schema.define(version: 2023_03_23_132304) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "fight_participants", "fighters"
+  add_foreign_key "fight_participants", "fights"
+  add_foreign_key "fights", "events"
+  add_foreign_key "fights", "fighters", column: "fighter1_id"
+  add_foreign_key "fights", "fighters", column: "fighter2_id"
   add_foreign_key "photos", "articles"
   add_foreign_key "photos", "users"
 end

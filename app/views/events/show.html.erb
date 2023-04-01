@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body text-black">
+    <h1 class="card-title"><%= @event.title %></h1>
+    <p class="card-text"><strong>Location:</strong> <%= @event.location %></p>
+    <p class="card-text"><strong>Date:</strong> <%= @event.date %></p>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Fights</h3>
+        <% @event.fights.includes(fight_participants: :fighter).each_with_index do |fight, index| %>
+          <br>
+          <h4>
+            <%= link_to "Fight ##{index+1}", fight_path(fight) %>
+          </h4>
+          <%= link_to Fighter.find(fight.fighter1_id).name, fighter_path %> vs <%= link_to Fighter.find(fight.fighter2_id).name, fighter_path %>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %> |
+      <%= link_to 'Back', events_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Events</h1>
+  <div class="row row-cols-1 text-black g-4">
+    <% @events.each do |event| %>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+            <p class="card-text"><strong>Date:</strong> <%= event.date %></p>
+            <% if current_user.admin? %>
+              <div>
+                <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-primary' %>
+                <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              </div>
+            <% end %>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Show', event_path(event), class: 'btn btn-secondary' %>
+          </div>
+          <% event.fights.each_with_index do |fight, index| %>
+            <ul>
+              <li><%= link_to "Fight ##{index+1}", fight_path(fight) %> - <%= link_to Fighter.find(fight.fighter1_id).name, fighter_path(fight.fighter1_id) %> vs <%= link_to Fighter.find(fight.fighter2_id).name, fighter_path(fight.fighter2_id) %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'New Event', new_event_path, class: 'btn btn-success mt-4' %>
+</div>

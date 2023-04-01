@@ -1,0 +1,36 @@
+<h1>Fighter Details</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <h3 class="card-title mb-4 text-black"><%= @fighter.name %></h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="fw-bold me-2">Age:</span> <%= @fighter.age %>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold me-2">Weight:</span> <%= @fighter.weight %>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold me-2">Professional Record:</span> <%= @fighter.professional_record %>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold me-2">City of Origin:</span> <%= @fighter.city_of_origin %>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold me-2">Club:</span> <%= @fighter.club %>
+            </li>
+            <!--
+            <li class="list-group-item">
+              <span class="fw-bold me-2">Fights:</span> <%= @fighter.fights.each { |f| puts f.event.title } %>
+            </li> -->
+          </ul>
+          <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
+          <%= link_to "Back", :back, class: "btn btn-success mt-4" %>
+          <%= link_to "All Fighters", fighters_path, class: "btn btn-primary mt-4" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<%#debugger%>
+<p>
+  <h1><%= @fight.event.title %> - <%#= @fight.weight_class %></h1>
+  <h3><%= @fight.event.date %> - <%#= @fight.weight_class %></h3>
+<p>
+<p>
+  <% if @fight.fighters.any? %>
+    <%= link_to @fight.fighters[0].name, @fight.fighters[0] %> vs <%= link_to @fight.fighters[1].name, @fight.fighters[1] %>
+  <% end %>
+</p>
+<p><strong>Location:</strong> <%= @fight.event.location %></p>
+
+<!--
+<% if @fight.finished %>
+  <p><strong>Winner:</strong> <%= @fight.winner ? @fight.winner.name : '-' %></p>
+<% end %>
+-->
+
+<br>
+
+<%= link_to 'Edit', edit_fight_path(@fight) %> |
+<%= link_to 'Back', :back %>
