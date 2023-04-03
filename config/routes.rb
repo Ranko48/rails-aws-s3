@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :events do
       get :fight_fields, on: :collection
+      resources :event_photos, only: [:create, :destroy]
     end
 
     resources :fighters

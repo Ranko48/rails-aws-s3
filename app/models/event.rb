@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   accepts_nested_attributes_for :fights, allow_destroy: true
   has_many :fighters, through: :fights
 
+  has_many :event_photos
+
   validates :title, presence: true
   validates :date, presence: true
 

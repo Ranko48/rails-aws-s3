@@ -1,0 +1,10 @@
+<%= form_for [@event, event_photo], html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="actions my-3">
+    <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+  </div>
+<% end %>
