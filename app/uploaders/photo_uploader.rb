@@ -13,7 +13,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   # Фотографию надо обрезать и уменьшить так, чтобы получился квадрат 800x800
-  process resize_to_fill: [800, 800]
+  # process resize_to_fill: [800, 800]
 
   # А потом нужно сделать миниатюрную версию 100x100
   version :thumb do

@@ -1,0 +1,39 @@
+<%= form_with model: fighter, local: true, class: "row g-3" do |form| %>
+<% if fighter.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+<h2><%= pluralize(fighter.errors.count, "error") %> prohibited this fighter from being saved:</h2>
+  <ul>
+    <% fighter.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <div class="col-md-6">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= form.label :age, class: "form-label" %>
+    <%= form.number_field :age, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= form.label :weight, class: "form-label" %>
+    <%= form.number_field :weight, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= form.label :professional_record, class: "form-label" %>
+    <%= form.text_field :professional_record, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= form.label :city_of_origin, class: "form-label" %>
+    <%= form.text_field :city_of_origin, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= form.label :club, class: "form-label" %>
+    <%= form.text_field :club, class: "form-control" %>
+  </div>
+  <div class="col-12">
+    <%= form.submit "Save Fighter", class: "btn btn-primary" %>
+  </div>
+<% end %> 

@@ -15,4 +15,7 @@ class PagesController < ApplicationController
 
   def terms
   end
+
+  def videos
+  end
 end

@@ -1,4 +1,6 @@
-<h1 class="article-title"><%= @last_article.title %></h1>
+<p class="mt-4"><%= link_to I18n.t("articles_list"), blog_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_article" %></p>
+
+<h1 class="article-title"><%= link_to @last_article.title, article_path(@last_article), class:"red" %></h1>
 
 <% if @last_article.photos.count != 0 %>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
