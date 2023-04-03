@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
   validates :date, presence: true
+
+  def all_fighters
+    fights.flat_map { |fight| [fight.fighter1, fight.fighter2] }.uniq
+  end
 end

@@ -1,34 +1,18 @@
 <%= form_with(model: @event, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group mt-2">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_field :date %>
+  <div class="form-group mt-2">
+    <%= form.label :date, class: 'form-label' %>
+    <%= form.date_field :date, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div id="fights-wrapper">
-    <%= form.fields_for :fights do |f| %>
-      <%= render partial: 'fight_fields', locals: { f: f } %>
-    <% end %>
+  <div class="form-group mt-2">
+    <%= form.label :location, class: 'form-label' %>
+    <%= form.text_field :location, class: 'form-control' %>
   </div>
 
-  <%= link_to "Add Fight", "#", id: "add-fight" %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Create Event', class: 'btn btn-primary mt-4' %>
   </div>
 <% end %>
-
-<div id="new-fight-template" style="display:none;">
-  <%= form_with(model: @event, local: true) do |form| %>
-    <%= form.fields_for :fights, Fight.new, child_index: "new_fight" do |f| %>
-      <%= render partial: 'fight_fields', locals: { f: f } %>
-    <% end %>
-  <% end %>
-</div>

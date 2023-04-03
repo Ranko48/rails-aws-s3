@@ -40,8 +40,8 @@ class FightersController < ApplicationController
   end
   
   private
-  
+
   def fighter_params
-    params.require(:fighter).permit(:name, :age, :weight, :professional_record, :city_of_origin, :club)
+    params.require(:fighter).permit(:name, :age, :weight, :professional_record, :city_of_origin, :club, :fights)
   end
 end

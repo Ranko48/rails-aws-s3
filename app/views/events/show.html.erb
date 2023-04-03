@@ -1,7 +1,10 @@
-<div class="card">
-  <div class="card-body text-black">
+<div class="card bg-dark">
+  <div class="card-body text-white">
     <h1 class="card-title"><%= @event.title %></h1>
-    <p class="card-text"><strong>Location:</strong> <%= @event.location %></p>
+    <p class="card-text">
+      <strong>Location:</strong> 
+      <a href="https://www.google.com/maps/search/?api=1&query=<%= URI.encode_www_form_component(@event.location) %>" target="_blank" title="View on Google Maps"><%= @event.location %></a>
+    </p>
     <p class="card-text"><strong>Date:</strong> <%= @event.date %></p>
     <br>
     <div class="row">
@@ -10,9 +13,9 @@
         <% @event.fights.includes(fight_participants: :fighter).each_with_index do |fight, index| %>
           <br>
           <h4>
-            <%= link_to "Fight ##{index+1}", fight_path(fight) %>
+            <%= link_to "Fight ##{index+1}", fight_path(fight), title:"View fight details" %>
           </h4>
-          <%= link_to Fighter.find(fight.fighter1_id).name, fighter_path %> vs <%= link_to Fighter.find(fight.fighter2_id).name, fighter_path %>
+          <%= link_to Fighter.find(fight.fighter1_id).name, fighter_path, title:"View fighter details" %> vs <%= link_to Fighter.find(fight.fighter2_id).name, fighter_path, title:"View fighter details" %>
           <hr>
         <% end %>
       </div>

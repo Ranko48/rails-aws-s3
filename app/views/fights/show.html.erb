@@ -4,8 +4,8 @@
   <h3><%= @fight.event.date %> - <%#= @fight.weight_class %></h3>
 <p>
 <p>
-  <% if @fight.fighters.any? %>
-    <%= link_to @fight.fighters[0].name, @fight.fighters[0] %> vs <%= link_to @fight.fighters[1].name, @fight.fighters[1] %>
+  <% if @fight.fighter1 && @fight.fighter2 %>
+    <%= link_to @fight.fighter1.name, @fight.fighter1 %> vs <%= link_to @fight.fighter2.name, @fight.fighter2 %>
   <% end %>
 </p>
 <p><strong>Location:</strong> <%= @fight.event.location %></p>

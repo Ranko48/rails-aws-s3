@@ -31,26 +31,16 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    
-    if @event.update(event_params)
-      # Loop through each fights attribute from params
-      event_params[:fights_attributes]&.each do |key, fight_params|
-        # If the fight has an id, update it
-        if fight_params[:id].present?
-          fight = Fight.find_by(id: fight_params[:id], event_id: @event.id)
-          fight.update(fight_params) if fight.present?
-        # If the fight has no id, create it
-        elsif fight_params[:fighter1_id].present? && fight_params[:fighter2_id].present?
-          @event.fights.create(fight_params)
-        end
-      end
   
+    if @event.update(event_params)
       redirect_to event_path(@event), notice: "Event updated successfully."
     else
+      Rails.logger.debug "Event update failed. Errors: #{@event.errors.inspect}"
+      Rails.logger.debug "Event params: #{event_params.inspect}"
       render :edit
     end
   end
-    
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy

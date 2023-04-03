@@ -21,10 +21,19 @@
             <li class="list-group-item">
               <span class="fw-bold me-2">Club:</span> <%= @fighter.club %>
             </li>
-            <!--
             <li class="list-group-item">
-              <span class="fw-bold me-2">Fights:</span> <%= @fighter.fights.each { |f| puts f.event.title } %>
-            </li> -->
+              <span class="fw-bold me-2">Events and opponents:</span>
+
+              <% fights = @fighter.fights %>
+              <% event_titles = @fighter.event_titles %>
+              <% opponents = @fighter.opponents %>
+
+              <% fights.each_with_index do |fight, index| %>
+                <div>
+                  On <%= link_to event_titles[index], event_path(fights[index].event) %> has fight VS <%= link_to opponents[index].name, fighter_path(opponents[index]) %>
+                </div>
+              <% end %>
+            </li>
           </ul>
           <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
           <%= link_to "Back", :back, class: "btn btn-success mt-4" %>

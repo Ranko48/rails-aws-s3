@@ -13,4 +13,4 @@
 <p class="mt-4"><%= link_to I18n.t("videos_list"), videos_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_videos" %></p>
 <%= render "videos_block" %>
 
-<%= render "articles/last_article" %>
+<%= render "articles/last_article" if @last_article %>

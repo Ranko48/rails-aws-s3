@@ -1,11 +1,11 @@
 <div class="container">
   <h1>Events</h1>
-  <div class="row row-cols-1 text-black g-4">
+  <div class="row row-cols-1 text-white g-4">
     <% @events.each do |event| %>
       <div class="col">
-        <div class="card h-100">
+        <div class="card h-100 bg-dark">
           <div class="card-body">
-            <h5 class="card-title"><%= event.title %></h5>
+            <h2 class="card-title"><%= event.title %></h2>
             <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
             <p class="card-text"><strong>Date:</strong> <%= event.date %></p>
             <% if current_user.admin? %>
