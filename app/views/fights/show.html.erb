@@ -8,7 +8,10 @@
     <%= link_to @fight.fighter1.name, @fight.fighter1 %> vs <%= link_to @fight.fighter2.name, @fight.fighter2 %>
   <% end %>
 </p>
-<p><strong>Location:</strong> <%= @fight.event.location %></p>
+<p class="card-text">
+  <strong>Location:</strong> 
+  <a href="https://www.google.com/maps/search/?api=1&query=<%= URI.encode_www_form_component(@fight.event.location) %>" target="_blank" title="View on Google Maps"><%= @fight.event.location %></a>
+</p>
 
 <!--
 <% if @fight.finished %>
