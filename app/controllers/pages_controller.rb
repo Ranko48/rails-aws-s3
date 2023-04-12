@@ -18,4 +18,7 @@ class PagesController < ApplicationController
 
   def videos
   end
+
+  def merch
+  end
 end

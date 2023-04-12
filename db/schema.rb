@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_03_220354) do
+ActiveRecord::Schema.define(version: 2023_04_04_013442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2023_04_03_220354) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["fight_id"], name: "index_fight_participants_on_fight_id"
     t.index ["fighter_id"], name: "index_fight_participants_on_fighter_id"
+  end
+
+  create_table "fighter_photos", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "fighter_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fighter_id"], name: "index_fighter_photos_on_fighter_id"
+    t.index ["user_id"], name: "index_fighter_photos_on_user_id"
   end
 
   create_table "fighters", force: :cascade do |t|
@@ -104,6 +114,8 @@ ActiveRecord::Schema.define(version: 2023_04_03_220354) do
   add_foreign_key "event_photos", "users"
   add_foreign_key "fight_participants", "fighters"
   add_foreign_key "fight_participants", "fights"
+  add_foreign_key "fighter_photos", "fighters"
+  add_foreign_key "fighter_photos", "users"
   add_foreign_key "fights", "events"
   add_foreign_key "fights", "fighters", column: "fighter1_id"
   add_foreign_key "fights", "fighters", column: "fighter2_id"

@@ -85,6 +85,25 @@ body {
   height: 200px;
 }
 
+// это для вьюхи бойца цвет фона формы с инфой
+.list-group {
+  color: white;
+  --bs-list-group-bg: #222222;
+}
+
+.gotham-link {
+  color: #ff0000;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+    transition: all ease .2s;
+  }
+}
+
+.text-red {
+  color: red;
+}
 
 .main-title {
   // margin-top: 18px;
@@ -99,6 +118,116 @@ body {
   background: -webkit-linear-gradient(#ff0000, #ff6666 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.versus-image {
+  max-height: 50px;
+}
+
+.figde {
+  display: flex;
+  flex-direction: row;
+}
+
+.underline {
+  border-bottom: 2px solid red;
+}
+
+.fighters-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fighter-card {
+  margin: auto;
+}
+
+.img-fluid {
+  height: 600px;
+}
+
+.swords {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.i-bust-image {
+  height: 100px;
+}
+
+.btn {
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.hov {
+  &:hover {
+    background-color: rgba(62, 62, 62, 0.5);
+  }
+}
+.join-us-btn {
+  width: 35%;
+}
+
+.join-us {
+  display: flex;
+  justify-content: center;
+}
+/* Серебристая кнопка */
+.btn-silver {
+  background-color: #c0c0c0;
+  border: none;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-silver:hover {
+  background-color: #a9a9a9;
+  box-shadow: 0 0 0 0 rgba(169, 169, 169, 0.5);
+}
+
+.border-silver {
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+}
+
+.border-black {
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.border-red {
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+.border-red-thick {
+  border: 3px solid red;
+  border-radius: 3px;
+}
+
+.event-bust-image {
+  width: auto;
+  // max-height: 30%; /* Устанавливаем максимальную высоту */
+  object-fit: cover; /* Обрезаем изображение */
+  object-position: top; /* Выравниваем изображение по верхнему краю */
+  height: 10em;
+}
+
+.bust-image {
+  width: auto;
+  max-height: 30%; /* Устанавливаем максимальную высоту */
+  object-fit: cover; /* Обрезаем изображение */
+  object-position: top; /* Выравниваем изображение по верхнему краю */
+  height: 10em;
+}
+
+.fighter-bust {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .container-fluid {

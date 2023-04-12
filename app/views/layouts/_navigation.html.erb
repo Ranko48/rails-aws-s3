@@ -75,12 +75,6 @@
         <li class="nav-item">
           <%= link_to I18n.t("about_us_title"), about_path, class:"nav-link active text-white" %>
         </li>
-        <li class="nav-item">
-          <%= link_to I18n.t("blog"), blog_path, class:"nav-link active text-white" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to I18n.t("fighters"), fighters_path, class:"nav-link active text-white" %>
-        </li>
         <li class="nav-item dropdown">
           <%= link_to "Events", events_path, class: "nav-link dropdown-toggle text-white", role: "button", "data-bs-toggle" => "dropdown", "aria-expanded" => "false" %>
           <ul class="dropdown-menu">
@@ -88,6 +82,19 @@
               <li><%= link_to event.title, event_path(event), class: "dropdown-item" %></li>
             <% end %>
           </ul>
+        </li>
+        <li class="nav-item">
+          <%= link_to I18n.t("fighters"), fighters_path, class:"nav-link active text-white" %>
+        </li>
+        <li class="nav-item">
+          <% if action_name == "main" %>
+            <%= link_to "Merch", "#merch", class:"nav-link active text-white" %>
+          <% else %>
+            <%= link_to "Merch", merch_path, class:"nav-link active text-white" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to I18n.t("blog"), blog_path, class:"nav-link active text-white" %>
         </li>
 
       </ul>

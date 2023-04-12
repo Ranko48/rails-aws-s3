@@ -2,9 +2,10 @@ class FightersController < ApplicationController
   def index
     @fighters = Fighter.all
   end
-  
+
   def show
     @fighter = Fighter.find(params[:id])
+    @new_fighter_photo = @fighter.fighter_photos.build(params[:fighter_photo])
   end
 
   def new

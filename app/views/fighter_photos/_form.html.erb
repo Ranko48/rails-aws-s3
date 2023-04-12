@@ -1,0 +1,11 @@
+<%= form_for [@fighter, @new_fighter_photo], html: { multipart: true } do |f| %>
+
+  <div class="form-group">
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
