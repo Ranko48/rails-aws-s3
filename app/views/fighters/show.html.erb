@@ -1,59 +1,63 @@
-<h1>Fighter Details</h1>
 <div class="container">
 
-  <div class="card bg-dark figde shadow mb-4">
+  <h1>Fighter Details</h1>
+  <div class="container">
 
-    <div class="card-body col-md-8 mx-4">
-      <h2 class="card-title my-4 text-decoration-underline text-white"><%= @fighter.name %></h2>
-      <table class="table table-striped table-hover table-dark">
-        <tbody>
-          <tr>
-            <td class="fw-bold">Age:</td>
-            <td><%= @fighter.age %></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Weight:</td>
-            <td><%= @fighter.weight %></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Professional Record:</td>
-            <td><%= @fighter.professional_record %></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">City of Origin:</td>
-            <td><%= @fighter.city_of_origin %></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Club:</td>
-            <td><%= @fighter.club %></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Events and opponents:</td>
-            <td>
-              <% fights = @fighter.fights %>
-              <% event_titles = @fighter.event_titles %>
-              <% opponents = @fighter.opponents %>
+    <div class="card bg-dark figde shadow mb-4">
 
-              <% fights.each_with_index do |fight, index| %>
-                <div>
-                  On <%= link_to fights[index].event.title, event_path(fights[index].event), class:"gotham-link" %> has fight VS <%= link_to opponents[index].name, fighter_path(opponents[index]), class:"gotham-link" %>
-                </div>
-              <% end %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  <%= link_to "Back", :back, class: "btn btn-lg btn-silver mt-4" %>
+      <div class="card-body col-md-8 mx-4">
+        <h2 class="card-title my-4 text-decoration-underline text-white"><%= @fighter.name %></h2>
+        <table class="table table-striped table-hover table-dark">
+          <tbody>
+            <tr>
+              <td class="fw-bold">Age:</td>
+              <td><%= @fighter.age %></td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Weight:</td>
+              <td><%= @fighter.weight %></td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Professional Record:</td>
+              <td><%= @fighter.professional_record %></td>
+            </tr>
+            <tr>
+              <td class="fw-bold">City of Origin:</td>
+              <td><%= @fighter.city_of_origin %></td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Club:</td>
+              <td><%= @fighter.club %></td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Events and opponents:</td>
+              <td>
+                <% fights = @fighter.fights %>
+                <% event_titles = @fighter.event_titles %>
+                <% opponents = @fighter.opponents %>
+
+                <% fights.each_with_index do |fight, index| %>
+                  <div>
+                    On <%= link_to fights[index].event.title, event_path(fights[index].event), class:"gotham-link" %> has fight VS <%= link_to opponents[index].name, fighter_path(opponents[index]), class:"gotham-link" %>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <%= link_to "Back", :back, class: "btn btn-lg btn-silver mt-4" %>
         <%= link_to "All Fighters", fighters_path, class: "btn btn-danger btn-lg mt-4" %>
       </div>
 
-    <div class="card-body col-md-4 d-flex justify-content-center">
-      <% default_image_used = !(@fighter.fighter_photos.any? && @fighter.fighter_photos[0].photo.present?) %>
-      <%= image_tag(default_image_used ? "default_fighter1.png" : @fighter.fighter_photos[0].photo.url, class: "img-fluid") %>
+      <div class="card-body col-md-4 d-flex justify-content-center">
+        <% default_image_used = !(@fighter.fighter_photos.any? && @fighter.fighter_photos[0].photo.present?) %>
+        <%= image_tag(default_image_used ? "default_fighter1.png" : @fighter.fighter_photos[0].photo.url, class: "img-fluid") %>
+      </div>
     </div>
-    </div>
-      <% if current_user.admin? %>
-        <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
-        <%= render partial: 'fighter_photos/form', locals: {event_photo: @new_fighter_photo || @fighter.fighter_photos.build} if @fighter.fighter_photos.empty? || default_image_used %>
-      <% end %>
-    </div>
+    <% if current_user.admin? %>
+      <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
+      <%= render partial: 'fighter_photos/form', locals: {event_photo: @new_fighter_photo || @fighter.fighter_photos.build} if @fighter.fighter_photos.empty? || default_image_used %>
+    <% end %>
+  </div>
+</div>

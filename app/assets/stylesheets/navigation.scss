@@ -1,0 +1,67 @@
+.navigation {
+  position: sticky;
+  background-color: #232122;
+}
+
+.navbar-brand {
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.button.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: white !important;
+
+  &:hover {
+    color: red !important;
+    text-decoration: underline;
+    transition: all ease .4s;
+  }
+}
+
+@media (max-width: 968px) {
+  .nav-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+    justify-content: center;
+  }
+}

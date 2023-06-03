@@ -1,27 +1,38 @@
-<br>
-<div class=" us-us d-flex">
-  <div class="col-8 us-block">
-    <p>Join Gotham Promotion and become a part of our mission to support and promote combat sports. We provide opportunities for anyone who aspires to become a professional fighter, and we offer resources and training for coaches and teams to improve their skills and strategies. At Gotham Promotion, we believe in fostering a positive and supportive community for all martial arts enthusiasts. So, come and join us in taking combat sports to the next level!</p>
-  <div class="join-us">
-    <button class="btn btn-lg btn-danger join-us-btn">JOIN GOTHAM NOW</button>
-  </div>
-  </div>
-  <div class="col-4 us-block bg-dark">
-    <%= image_tag "cage1.jpg" %>
+<div class="parallax-section">
+  <div class="hero-section" data-parallax="scroll" data-speed="0.1">
+    <div class="hero-image"></div>
+    <h1 class="hero-title position-absolute top-100 start-50 translate-middle"><%= t "unleash" %></h1>
   </div>
 </div>
+
 <br>
 
-<p id="merch" class="mt-4"><%= link_to "Merchandizing", merch_path, class:"red", target: "_blank" %>
-  <i class="fa fa-angle-right mx-2"></i> Gotham's Best Choice
-</p>
-<br>
+<div class="container mt-4">
 
-<%= render "merch_block" %>
-<br>
+  <div class=" us-us d-flex">
+    <div class="col-8 us-block">
+      <p>Join Gotham Promotion and become a part of our mission to support and promote combat sports. We provide opportunities for anyone who aspires to become a professional fighter, and we offer resources and training for coaches and teams to improve their skills and strategies. At Gotham Promotion, we believe in fostering a positive and supportive community for all martial arts enthusiasts. So, come and join us in taking combat sports to the next level!</p>
+    <div class="join-us">
+      <button class="btn btn-lg btn-danger join-us-btn">JOIN GOTHAM NOW</button>
+    </div>
+    </div>
+    <div class="col-4 us-block bg-dark">
+      <%= image_tag "cage1.jpg" %>
+    </div>
+  </div>
+  <br>
 
-<p class="mt-4"><%= link_to I18n.t("videos_list"), videos_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_videos" %></p>
-<%= render "videos_block" %>
-<br>
+  <p id="merch" class="mt-4"><%= link_to "Merchandizing", merch_path, class:"red", target: "_blank" %>
+    <i class="fa fa-angle-right mx-2"></i> Gotham's Best Choice
+  </p>
+  <br>
 
-<%= render "articles/last_article" if @last_article %>
+  <%= render "merch_block" %>
+  <br>
+
+  <p class="mt-4"><%= link_to I18n.t("videos_list"), videos_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_videos" %></p>
+  <%= render "videos_block" %>
+  <br>
+
+  <%= render "articles/last_article" if @last_article %>
+</div>

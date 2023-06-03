@@ -18,28 +18,17 @@
 
   <body>
     <%= render "layouts/navigation" %>
-    <% if action_name == "main" %>
-      <div class="parallax-section">
-        <div class="hero-section" data-parallax="scroll" data-speed="0.1">
-          <div class="hero-image"></div>
-          <h1 class="hero-title position-absolute top-100 start-50 translate-middle"><%= t "unleash" %></h1>
-        </div>
-      </div>
-      <% else %>
-        <hr>
-    <% end %>
-
-    <div class="container mt-4">
+    <div class="content">
       <br>
       <%= yield %>
       <br>
-    </div>
-<br>
-<div>
-<br>
-</div>
-    <br>
 
+      <br>
+        <div>
+          <br>
+        </div>
+      <br>
+    </div>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         let addFightButton = document.getElementById("add-fight");

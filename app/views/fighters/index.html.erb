@@ -1,71 +1,73 @@
-<h1>Fighters</h1>
-<% if current_user.admin? %>
-  <%= link_to 'New Fighter', new_fighter_path %>
-<% end %>
+<div class="container">
+  <h1>Fighters</h1>
+  <% if current_user.admin? %>
+    <%= link_to 'New Fighter', new_fighter_path %>
+  <% end %>
 
-<div class="container my-5">
-  <div class="d-flex flex-wrap justify-content-center margin-auto text-black">
-    <% @fighters.each do |fighter| %>
-      <div class="card mx-4 mb-4 bg-dark text-white col-md-5 col-sm-12">
-        <div class="d-flex hov">
-          <div class="col-md-6">
-            <div class="card-body">
-              <h4 class="card-title">
-                <%= link_to fighter.name, fighter, class: "nav-link text-white" %>
-              </h4>
-              <p class="card-text">
-                <strong>Age:</strong> <%= fighter.age %><br>
-                <strong>Weight:</strong> <%= fighter.weight %><br>
-                <strong>Professional Record:</strong> <%= fighter.professional_record %><br>
-                <strong>City of Origin:</strong> <%= fighter.city_of_origin %><br>
-                <strong>Club:</strong> <%= fighter.club %><br>
-              </p>
-              <% if current_user.admin? %>
-                <%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary' %>
-                <%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-              <% end %>
+  <div class="container my-5">
+    <div class="d-flex flex-wrap justify-content-center margin-auto text-black">
+      <% @fighters.each do |fighter| %>
+        <div class="card mx-4 mb-4 bg-dark text-white col-md-5 col-sm-12">
+          <div class="d-flex hov">
+            <div class="col-md-6">
+              <div class="card-body">
+                <h4 class="card-title">
+                  <%= link_to fighter.name, fighter, class: "nav-link text-white" %>
+                </h4>
+                <p class="card-text">
+                  <strong>Age:</strong> <%= fighter.age %><br>
+                  <strong>Weight:</strong> <%= fighter.weight %><br>
+                  <strong>Professional Record:</strong> <%= fighter.professional_record %><br>
+                  <strong>City of Origin:</strong> <%= fighter.city_of_origin %><br>
+                  <strong>Club:</strong> <%= fighter.club %><br>
+                </p>
+                <% if current_user.admin? %>
+                  <%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary' %>
+                  <%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <% end %>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-6">
-            <div class="card-body d-flex justify-content-center">
-              <% default_image_used = !(fighter.fighter_photos.any? && fighter.fighter_photos[0].photo.bust.present?) %>
-              <%= image_tag(default_image_used ? "default_fighter1.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image") %>
+            <div class="col-md-6">
+              <div class="card-body d-flex justify-content-center">
+                <% default_image_used = !(fighter.fighter_photos.any? && fighter.fighter_photos[0].photo.bust.present?) %>
+                <%= image_tag(default_image_used ? "default_fighter1.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image") %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<table class="table table-dark table-responsive table-striped table-hover text-white">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Weight</th>
-      <th>Professional Record</th>
-      <th>City of Origin</th>
-      <th>Club</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @fighters.each do |fighter| %>
+  <table class="table table-dark table-responsive table-striped table-hover text-white">
+    <thead>
       <tr>
-        <td><%= link_to fighter.name, fighter, class: "nav-link" %></td>
-        <td><%= fighter.age %></td>
-        <td><%= fighter.weight %></td>
-        <td><%= fighter.professional_record %></td>
-        <td><%= fighter.city_of_origin %></td>
-        <td><%= fighter.club %></td>
-        <% if current_user.admin? %>
-          <td><%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary btn-sm' %></td>
-          <td><%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
-        <% end %>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Weight</th>
+        <th>Professional Record</th>
+        <th>City of Origin</th>
+        <th>Club</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+    <tbody>
+      <% @fighters.each do |fighter| %>
+        <tr>
+          <td><%= link_to fighter.name, fighter, class: "nav-link" %></td>
+          <td><%= fighter.age %></td>
+          <td><%= fighter.weight %></td>
+          <td><%= fighter.professional_record %></td>
+          <td><%= fighter.city_of_origin %></td>
+          <td><%= fighter.club %></td>
+          <% if current_user.admin? %>
+            <td><%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary btn-sm' %></td>
+            <td><%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
