@@ -113,6 +113,10 @@ body {
   color: red;
 }
 
+hr {
+  margin: 1rem 0 0 0;
+}
+
 .main-title {
   // margin-top: 18px;
   // font-size: 3em;
@@ -128,8 +132,22 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.main-title-uc {
+  // margin-top: 18px;
+  // font-size: 3em;
+  color: red;
+  position: relative;
+  font-family: 'Headline Text', sans-serif;
+  font-size: 80px;
+  font-weight: 130%;
+  letter-spacing: 9px;
+  background: -webkit-linear-gradient(#ff0000, #ff6666 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .versus-image {
-  max-height: 50px;
+  max-height: 150px;
 }
 
 .figde {

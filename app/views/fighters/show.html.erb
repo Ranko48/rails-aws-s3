@@ -55,7 +55,7 @@
         <%= image_tag(default_image_used ? "default_fighter1.png" : @fighter.fighter_photos[0].photo.url, class: "img-fluid") %>
       </div>
     </div>
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
       <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
       <%= render partial: 'fighter_photos/form', locals: {event_photo: @new_fighter_photo || @fighter.fighter_photos.build} if @fighter.fighter_photos.empty? || default_image_used %>
     <% end %>

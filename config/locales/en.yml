@@ -62,3 +62,4 @@ en:
   articles_list: "Articles list"
   videos_list: "Videos list"
   fresh_article: "Fresh article"
+  not_authorized: 'This is not allowed for you!'

@@ -1,12 +1,14 @@
+<br>
 <div class="container">
   <h1><%= t "articles_list" %></h1>
 
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <%= link_to "New Article", new_article_path, class:"red" %>
   <% end %>
 
   <% @articles.each do |article| %>
     <div class="article">
+    
       <h2><%= link_to article.title, article_path(article), class:"red"  %></h2>
       <p><%= article.description.truncate(200) %><%= link_to "Read more", article_path(article), class:"gotham-link"  %></p>
     </div>

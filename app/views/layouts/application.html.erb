@@ -17,18 +17,23 @@
   </head>
 
   <body>
-    <%= render "layouts/navigation" %>
-    <div class="content">
-      <br>
-      <%= yield %>
-      <br>
+    <% if action_name != "under_construction" %>
+      <%= render "layouts/navigation" %>
+    <% end %>
 
-      <br>
-        <div>
-          <br>
+    <% if action_name == "main" %>
+      <div class="parallax-section">
+        <div class="hero-section" data-parallax="scroll" data-speed="1">
+          <div class="hero-image"></div>
+          <h1 class="hero-title position-absolute top-100 start-50 translate-middle"><%= t "unleash" %></h1>
         </div>
-      <br>
-    </div>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <%= content_tag :div, flash[:alert], class: "text-center fs-3 bg-danger" if flash[:alert] %>
+      <%= yield %>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         let addFightButton = document.getElementById("add-fight");

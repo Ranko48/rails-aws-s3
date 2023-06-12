@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  include Pundit::Authorization
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   around_action :switch_locale
   before_action :last_events
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -10,6 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def user_not_authorized
+    flash[:alert] = t('not_authorized')
+    redirect_to(request.referrer || root_path)
+  end
 
   def last_events
     @last_events = Event.order(created_at: :desc).limit(3)

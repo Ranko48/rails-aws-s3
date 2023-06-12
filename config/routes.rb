@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :fighter_photos
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-    root to: 'pages#main'
+    # root to: 'pages#main'
+    get '/main', to: 'pages#main'
+    root to: 'pages#under_construction'
     devise_for :users
 
     resources :articles do
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
       resources :fighter_photos, only: [:create, :destroy]
     end
 
-    
     get '/videos', to: 'pages#videos'
     get '/merch', to: 'pages#merch'
     get '/about', to: 'pages#about'

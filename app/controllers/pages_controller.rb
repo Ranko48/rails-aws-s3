@@ -21,4 +21,7 @@ class PagesController < ApplicationController
 
   def merch
   end
+
+  def under_construction
+  end
 end

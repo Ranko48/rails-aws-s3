@@ -59,3 +59,5 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+
+gem "pundit", "~> 2.3"

@@ -10,8 +10,7 @@
   <!-- <p><%= "By #{@article.user.name}" %></p> -->
 
   <%#= render partial: 'photo', collection: @article.photos.except(@new_photo) %>
-
-  <% if current_user.admin? %>
+  <% if policy(Article).edit? %>
     <br>
     <hr>
     <div class="article-photo-form">

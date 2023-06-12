@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  
+  after_action :verify_authorized, except: [:index, :show]
+
   def index
     @articles = Article.all
   end
@@ -12,10 +13,12 @@ class ArticlesController < ApplicationController
   
   def new
     @article = current_user.articles.build
+    authorize @article
   end
   
   def create
     @article = current_user.articles.build(article_params)
+    authorize @article
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -24,9 +27,11 @@ class ArticlesController < ApplicationController
   end
   
   def edit
+    authorize @article
   end
   
   def update
+    authorize @article
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else
@@ -35,6 +40,7 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
+    authorize @article
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end

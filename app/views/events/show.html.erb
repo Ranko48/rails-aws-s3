@@ -32,6 +32,7 @@
                 <%= image_tag(default_image_used1 ? "default_fighter.png" : fighter1.fighter_photos[0].photo.bust.url, class: "img-fluid event-bust-image") %>
                 <%= link_to fighter1.name, fighter_path(fighter1), title: "View fighter details", class: "gotham-link fs-2" %>
               </div>
+              
               <span class="swords mx-2 col-2"><%= image_tag "versus.png", class:"versus-image" %></span>
               <div class="col-4 text-center d-flex flex-column align-items-center">
                 <% default_image_used2 = !(fighter2.fighter_photos.any? && fighter2.fighter_photos[0].photo.bust.present?) %>
@@ -45,14 +46,14 @@
         </div>
 
         <div class="card-body">
-          <% if current_user.admin? %>
+          <% if current_user && current_user.admin? %>
             <div class="event-photo-form">
               <%= render partial: 'event_photos/form', locals: {event_photo: @new_event_photo || @event.event_photos.build} %>
             </div>
           <% end %>
 
           <div class="mt-4 text-center">
-            <% if current_user.admin? %>
+            <% if current_user && current_user.admin? %>
               <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %> |
             <% end %>
             <%= link_to 'Back', events_path, class: "btn btn-secondary" %>

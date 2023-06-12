@@ -1,6 +1,7 @@
+<br>
 <div class="container">
   <h1>Fighters</h1>
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <%= link_to 'New Fighter', new_fighter_path %>
   <% end %>
 
@@ -15,13 +16,13 @@
                   <%= link_to fighter.name, fighter, class: "nav-link text-white" %>
                 </h4>
                 <p class="card-text">
-                  <strong>Age:</strong> <%= fighter.age %><br>
-                  <strong>Weight:</strong> <%= fighter.weight %><br>
-                  <strong>Professional Record:</strong> <%= fighter.professional_record %><br>
-                  <strong>City of Origin:</strong> <%= fighter.city_of_origin %><br>
-                  <strong>Club:</strong> <%= fighter.club %><br>
+                  <strong>Age:</strong> <%= fighter.age %>&#10;
+                  <strong>Weight:</strong> <%= fighter.weight %>&#10;
+                  <strong>Professional Record:</strong> <%= fighter.professional_record %>&#10;
+                  <strong>City of Origin:</strong> <%= fighter.city_of_origin %>&#10;
+                  <strong>Club:</strong> <%= fighter.club %>&#10;
                 </p>
-                <% if current_user.admin? %>
+                <% if current_user && current_user.admin? %>
                   <%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary' %>
                   <%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
                 <% end %>
@@ -61,7 +62,7 @@
           <td><%= fighter.professional_record %></td>
           <td><%= fighter.city_of_origin %></td>
           <td><%= fighter.club %></td>
-          <% if current_user.admin? %>
+          <% if current_user && current_user.admin? %>
             <td><%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary btn-sm' %></td>
             <td><%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
           <% end %>
