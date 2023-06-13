@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: gotham_production
-  username: gotham
-  password: <%= ENV['GOTHAM_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: <%= Rails.application.credentials.gotham_database_password %>
