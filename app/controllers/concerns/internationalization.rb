@@ -1,4 +1,4 @@
-# module Internationalization
+module Internationalization
 #   around_action :switch_locale
 
 #   private
@@ -49,4 +49,4 @@
 #   def default_url_options
 #     { locale: I18n.locale }
 #   end
-# end
+end
