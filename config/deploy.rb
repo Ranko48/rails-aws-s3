@@ -22,6 +22,8 @@ set :branch, "main"
 # Default value for :pty is false
 # set :pty, true
 
+append :linked_files, 'config/credentials.yml.enc', 'config/master.key'
+
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
 
