@@ -63,6 +63,7 @@ gem 'rails-i18n', '~> 7.0.0'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'rmagick'
 
 gem "pundit", "~> 2.3"
