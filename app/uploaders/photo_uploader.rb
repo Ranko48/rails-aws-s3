@@ -4,7 +4,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   # Изображения будут храниться локально в специальной папке проекта
-  storage :file
+  storage :fog
 
   # Папка, в которой будут храниться все наши загруженные файлы
   # Например, uploads/photo/photo/1
