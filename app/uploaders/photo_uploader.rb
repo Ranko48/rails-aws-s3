@@ -12,6 +12,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def fog_directory
+    'gotham-pictures'
+  end
+
   # Фотографию надо обрезать и уменьшить так, чтобы получился квадрат 800x800
   # process resize_to_fill: [800, 800]
 
