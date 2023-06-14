@@ -1,0 +1,29 @@
+<div class="card mb-2 bg-dark text-white col-12 col-sm-12 col-md-6">
+  <div class="d-flex flex-column flex-md-row hov">
+    <div class="order-2 order-md-1 col-12 col-md-6">
+      <div class="card-body text-center text-md-start">
+        <h4 class="card-title">
+          <%= link_to fighter.name, fighter, class: "nav-link text-white" %>
+        </h4>
+        <p class="card-text">
+          <strong>Age:</strong> <%= fighter.age %><br>
+          <strong>Weight:</strong> <%= fighter.weight %><br>
+          <strong>Professional Record:</strong> <%= fighter.professional_record %><br>
+          <strong>City of Origin:</strong> <%= fighter.city_of_origin %><br>
+          <strong>Club:</strong> <%= fighter.club %><br>
+        </p>
+        <% if current_user && current_user.admin? %>
+          <%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary' %>
+          <%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="order-1 order-md-2 col-12 col-md-6">
+      <div class="card-body d-flex justify-content-center">
+        <% default_image_used = !(fighter.fighter_photos.any? && fighter.fighter_photos[0].photo.bust.present?) %>
+        <%= image_tag(default_image_used ? "default_fighter1.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image my-auto") %>
+      </div>
+    </div>
+  </div>
+</div>

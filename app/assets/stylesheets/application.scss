@@ -19,6 +19,9 @@
  @import "font-awesome";
  @import "bootstrap/scss/bootstrap";
  @import "navigation";
+ @import "article";
+ @import "fight";
+ @import "hero";
 
 * {
   // border: 1px silver solid;
@@ -78,27 +81,6 @@ body {
 
 }
 
-.article-title {
-  margin-left: 4rem;
-  margin-right: 4rem;
-  margin-bottom: 2rem;
-}
-
-.article-description-block {
-  margin: 1rem 4rem;
-  padding: 1em 0em;
-}
-
-.art-index-carousel {
-  height: 200px;
-}
-
-// это для вьюхи бойца цвет фона формы с инфой
-.list-group {
-  color: white;
-  --bs-list-group-bg: #222222;
-}
-
 .gotham-link {
   color: #ff0000;
   text-decoration: none;
@@ -118,19 +100,27 @@ hr {
 }
 
 .main-title {
-  // margin-top: 18px;
-  // font-size: 3em;
   color: red;
   position: relative;
   font-family: 'Headline Text', sans-serif;
-  font-size: 80px;
-  font-weight: 130%;
-  left: 12%;
-  letter-spacing: 9px;
+  font-size: 3em;
+  left: 0;
+  letter-spacing: 3px;
+  width: 100%;
+  text-align: center;
   background: -webkit-linear-gradient(#ff0000, #ff6666 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media (min-width: 600px) {
+  .main-title {
+    font-size: 80px;
+    left: 12%;
+    letter-spacing: 9px;
+  }
+}
+
 
 .main-title-uc {
   // margin-top: 18px;
@@ -150,22 +140,8 @@ hr {
   max-height: 150px;
 }
 
-.figde {
-  display: flex;
-  flex-direction: row;
-}
-
 .underline {
   border-bottom: 2px solid red;
-}
-
-.fighters-block {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.fighter-card {
-  margin: auto;
 }
 
 .img-fluid {
@@ -234,27 +210,6 @@ hr {
   border-radius: 3px;
 }
 
-.event-bust-image {
-  width: auto;
-  // max-height: 30%; /* Устанавливаем максимальную высоту */
-  object-fit: cover; /* Обрезаем изображение */
-  object-position: top; /* Выравниваем изображение по верхнему краю */
-  height: 10em;
-}
-
-.bust-image {
-  width: auto;
-  max-height: 30%; /* Устанавливаем максимальную высоту */
-  object-fit: cover; /* Обрезаем изображение */
-  object-position: top; /* Выравниваем изображение по верхнему краю */
-  height: 10em;
-}
-
-.fighter-bust {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 
 .container-fluid {
   max-height: 95px;
@@ -274,59 +229,6 @@ hr {
   align-items: baseline;
 }
 
-.container {
-  // max-width: 100%;
-  // padding-left: 0;
-  // padding-right: 0;
-}
-
-.logo-img {
-  margin-top: 5px;
-  height: 90px;
-  position: absolute;
-
-  &:hover {
-  height: 110px;
-  transition: all ease .2s;
-
-  }
-}
-
-.content {
-  // top: 100px;
-  // clear: both;
-}
-.fixed-top {
-  // margin-bottom: 5rem;
-  // padding-bottom: 5rem;
-}
-
-.lang-icon {
-  margin-bottom: 3px;
-  width: 20px;
-  height: 20px;
-}
-
-.dropdown-menu {
-  border-radius: 3px !important;
-}
-
-.lang-menu[data-bs-popper] {
-  left: -60%;
-}
-
-.drop, .lang-menu[data-bs-popper] {
-  font-size: 1em;
-}
-
-#lang-selector {
-  text-transform: capitalize;
-  &:hover {
-    // text-decoration: none;
-    color: white !important;
-  }
-}
-
 .about-us-text {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -335,45 +237,9 @@ hr {
   justify-content: center !important;
 }
 
-
-
-.hero-section {
-  height: 80vh;
-  position: relative;
-  display: flex;
-  justify-content: center center;
-}
-
 .row {
   display: flex;
   flex-direction: column;
-}
-
-.hero-title {
-  width: 100%;
-  text-align: center;
-  letter-spacing: 12px;
-  color: rgba(255, 0, 0, 0.943);
-  font-weight: bold;
-  font-size: 5rem;
-}
-
-@media (max-width: 968px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-}
-
-.parallax-section {
-  background-image: url("hero.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 
@@ -386,8 +252,4 @@ hr {
 
 .carousel-photo {
   height: 500px;
-}
-
-.carousel-photo-for-art-index {
-  height: 200px;
 }

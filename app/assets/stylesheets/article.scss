@@ -1,0 +1,117 @@
+.container {
+  padding: 1rem;
+}
+
+.article {
+  padding: 1rem 0;
+}
+
+.article h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article p {
+  font-size: 1rem;
+}
+
+.art-index-carousel {
+  width: 100%;
+}
+
+
+.carousel-photo-for-art-index {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+}
+
+/* Styles for tablets and larger devices */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .article h2 {
+    font-size: 2rem;
+  }
+
+  .article p {
+    font-size: 1.25rem;
+  }
+
+  .carousel-photo-for-art-index {
+    height: 200px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+/* Styles for desktop and larger devices */
+
+@media (min-width: 992px) {
+  .container {
+    padding: 3rem;
+  }
+
+  .article h2 {
+    font-size: 2.5rem;
+  }
+
+  .article p {
+    font-size: 1.5rem;
+  }
+
+  .carousel-photo-for-art-index {
+    height: 300px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.article-description-block {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.article-photo-form {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .article-title {
+    font-size: 2.5rem;
+  }
+
+  .article-description-block {
+    font-size: 1.125rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}

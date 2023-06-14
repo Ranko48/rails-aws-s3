@@ -2,63 +2,64 @@
   <nav class="navbar navbar-row">
     <div class="container-fluid">
       <div class="mx-4">
-        <a class="navbar-brand mx-4" href="/">
+        <a class="navbar-brand mx-4 dis-no" href="/">
           <%= image_tag "helmet1.png", class:"logo-img" %>
         </a>
       </div>
 
       <a class="navbar-brand text-white" href="/"><h2 class="main-title text-decoration-underline">Gotham Promotion</h2></a>
 
-      <div class="icons-lang mx-4">
+      <div class="icons-lang mx-4 dis-no">
+        <div class="dis-no">
+          <ul class="nav cont-lang-block mb-2 mb-md-0">
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=19172150277", target="_blank", title="Whatsapp"><i class="fa fa-whatsapp contact-icon" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com/gotham_promotion?igshid=ZDdkNTZiNTM=", target="_blank", title="Instagram"><i class="fa fa-instagram contact-icon"></i></a>
+            </li>
+            <li>
+              <a href="https://facebook.com/gothamdr", target="_blank", title="Facebook"><i class="fa fa-facebook-official contact-icon "></i></a>
+            </li>
+            <li>
+                <a href="https://goo.gl/maps/sGvNhz9knZm2owx69", target="_blank", title="Googlemaps"><i class="fa fa-map-marker contact-icon"></i></a>
+            </li>
+            <li>
+              <a href = "mailto: drminingco@gmail.com", target="_blank", title="Email Us"><i class="fa fa-envelope contact-icon"></i></a>
+            </li>
+            <li class="dropdown", id="lang-selector">
+              <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white',
+                data: {"bs-toggle": 'dropdown'} do %>
+                <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
+                <%= image_tag "#{locale}.png", class: "lang-icon" %>
 
-        <ul class="nav cont-lang-block mb-2 mb-md-0">
-          <li>
-            <a href="https://api.whatsapp.com/send?phone=19172150277", target="_blank", title="Whatsapp"><i class="fa fa-whatsapp contact-icon" aria-hidden="true"></i></a>
-          </li>
-          <li>
-            <a href="https://instagram.com/gotham_promotion?igshid=ZDdkNTZiNTM=", target="_blank", title="Instagram"><i class="fa fa-instagram contact-icon"></i></a>
-          </li>
-          <li>
-            <a href="https://facebook.com/gothamdr", target="_blank", title="Facebook"><i class="fa fa-facebook-official contact-icon "></i></a>
-          </li>
-          <li>
-              <a href="https://goo.gl/maps/sGvNhz9knZm2owx69", target="_blank", title="Googlemaps"><i class="fa fa-map-marker contact-icon"></i></a>
-          </li>
-          <li>
-            <a href = "mailto: drminingco@gmail.com", target="_blank", title="Email Us"><i class="fa fa-envelope contact-icon"></i></a>
-          </li>
-          <li class="dropdown", id="lang-selector">
-            <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white',
-              data: {"bs-toggle": 'dropdown'} do %>
-              <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
-              <%= image_tag "#{locale}.png", class: "lang-icon" %>
-
-              <%= t I18n.locale %>
-            <% end %>
-
-            <ul class="dropdown-menu lang-menu">
-              <% I18n.available_locales.each do |locale| %>
-                <li>
-                  <% if I18n.locale == locale %>
-                    <span class="dropdown-item">
-                      <%= image_tag "#{locale}.png", class: "lang-icon" %>
-                      <%= t(I18n.locale) %>
-                    </span>
-                  <% else %>
-                    <a href="<%= url_for(locale: locale) %>" class="dropdown-item">
-                      <%= image_tag "#{locale}.png", class: "lang-icon" %>
-                      <%= t(locale) %>
-                    </a>
-                  <% end %>
-                </li>
+                <%= t I18n.locale %>
               <% end %>
-            </ul>
-          </li>
-          <!--
-          <li class="nav-item">
-            <%= link_to 'Войти', new_user_session_path %>
-          </li> -->
-        </ul>
+
+              <ul class="dropdown-menu lang-menu">
+                <% I18n.available_locales.each do |locale| %>
+                  <li>
+                    <% if I18n.locale == locale %>
+                      <span class="dropdown-item">
+                        <%= image_tag "#{locale}.png", class: "lang-icon" %>
+                        <%= t(I18n.locale) %>
+                      </span>
+                    <% else %>
+                      <a href="<%= url_for(locale: locale) %>" class="dropdown-item">
+                        <%= image_tag "#{locale}.png", class: "lang-icon" %>
+                        <%= t(locale) %>
+                      </a>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+            <!--
+            <li class="nav-item">
+              <%= link_to 'Войти', new_user_session_path %>
+            </li> -->
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

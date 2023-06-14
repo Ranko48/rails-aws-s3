@@ -8,35 +8,7 @@
   <div class="container my-5">
     <div class="d-flex flex-wrap justify-content-center margin-auto text-black">
       <% @fighters.each do |fighter| %>
-        <div class="card mx-4 mb-4 bg-dark text-white col-md-5 col-sm-12">
-          <div class="d-flex hov">
-            <div class="col-md-6">
-              <div class="card-body">
-                <h4 class="card-title">
-                  <%= link_to fighter.name, fighter, class: "nav-link text-white" %>
-                </h4>
-                <p class="card-text">
-                  <strong>Age:</strong> <%= fighter.age %>&#10;
-                  <strong>Weight:</strong> <%= fighter.weight %>&#10;
-                  <strong>Professional Record:</strong> <%= fighter.professional_record %>&#10;
-                  <strong>City of Origin:</strong> <%= fighter.city_of_origin %>&#10;
-                  <strong>Club:</strong> <%= fighter.club %>&#10;
-                </p>
-                <% if current_user && current_user.admin? %>
-                  <%= link_to 'Edit', edit_fighter_path(fighter), class: 'btn btn-primary' %>
-                  <%= link_to 'Destroy', fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-                <% end %>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card-body d-flex justify-content-center">
-                <% default_image_used = !(fighter.fighter_photos.any? && fighter.fighter_photos[0].photo.bust.present?) %>
-                <%= image_tag(default_image_used ? "default_fighter1.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image") %>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render 'fighter', fighter: fighter %>
       <% end %>
     </div>
   </div>

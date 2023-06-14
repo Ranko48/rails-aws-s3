@@ -1,0 +1,33 @@
+.hero-section {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center center;
+}
+
+.hero-title {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 12px;
+  color: rgba(255, 0, 0, 0.943);
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+@media (max-width: 968px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+.parallax-section {
+  background-image: url("hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

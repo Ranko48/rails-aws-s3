@@ -1,0 +1,44 @@
+.fighters-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fighter-card {
+  margin: auto;
+}
+
+.event-bust-image {
+  width: auto;
+  // max-height: 30%; /* Устанавливаем максимальную высоту */
+  object-fit: cover; /* Обрезаем изображение */
+  object-position: top; /* Выравниваем изображение по верхнему краю */
+  height: 10em;
+}
+
+.bust-image {
+  width: auto;
+  max-height: 30%; /* Устанавливаем максимальную высоту */
+  object-fit: cover; /* Обрезаем изображение */
+  object-position: top; /* Выравниваем изображение по верхнему краю */
+  height: 10em !important;
+}
+
+@media (max-width: 992px) {
+  .bust-image {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.fighter-bust {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+// это для вьюхи бойца цвет фона формы с инфой
+.list-group {
+  color: white;
+  --bs-list-group-bg: #222222;
+}
