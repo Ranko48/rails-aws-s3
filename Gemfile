@@ -68,3 +68,4 @@ gem 'rmagick'
 
 gem "pundit", "~> 2.3"
 gem 'listen', '~> 3.3'
+gem 'spring'
