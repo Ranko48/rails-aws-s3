@@ -93,6 +93,9 @@ body {
 
 .text-red {
   color: red;
+  &:hover {
+    color: white;
+  }
 }
 
 hr {
