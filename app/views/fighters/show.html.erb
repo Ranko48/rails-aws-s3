@@ -4,9 +4,9 @@
   <h1>Fighter Details</h1>
   <div class="container">
 
-    <div class="card bg-dark d-flex flex-row shadow mb-4">
+    <div class="card bg-dark d-flex flex-md-row shadow mb-4">
 
-      <div class="card-body col-md-8 mx-4">
+      <div class="order-2 order-md-1 card-body col-md-8 mx-4">
         <h2 class="card-title my-4 text-decoration-underline text-white"><%= @fighter.name %></h2>
         <table class="table table-striped table-hover table-dark">
           <tbody>
@@ -51,13 +51,15 @@
         <%= link_to "All Fighters", fighters_path, class: "btn btn-danger btn-lg mt-4" %>
       </div>
 
-      <div class="card-body col-md-4 d-flex justify-content-center">
+      <div class="order-1 order-md-2 card-body col-md-4 d-flex justify-content-center">
         <% default_image_used = !(@fighter.fighter_photos.any? && @fighter.fighter_photos[0].photo.present?) %>
         <%= image_tag(default_image_used ? "default_fighter1.png" : @fighter.fighter_photos[0].photo.url, class: "img-fluid") %>
       </div>
     </div>
     <% if current_user && current_user.admin? %>
       <%= link_to "Edit", edit_fighter_path, class: "btn btn-warning mt-4" %>
+      <%= link_to 'Destroy', @fighter, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mt-4 mx-2' %>
+
       <%= render partial: 'fighter_photos/form', locals: {event_photo: @new_fighter_photo || @fighter.fighter_photos.build} if @fighter.fighter_photos.empty? || default_image_used %>
     <% end %>
   </div>

@@ -1,12 +1,12 @@
 <br>
-<div class="container">
+<div class="">
   <h1>Fighters</h1>
   <% if current_user && current_user.admin? %>
     <%= link_to 'New Fighter', new_fighter_path %>
   <% end %>
 
-  <div class="container my-5">
-    <div class="d-flex flex-wrap justify-content-center margin-auto text-black">
+  <div class="">
+    <div class="mx-2 d-flex flex-wrap justify-content-center margin-auto text-black">
       <% @fighters.each do |fighter| %>
         <%= render 'fighter', fighter: fighter %>
       <% end %>
