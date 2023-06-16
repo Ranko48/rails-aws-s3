@@ -22,7 +22,7 @@
     <div class="order-1 order-md-2 col-12 col-md-6">
       <div class="card-body d-flex justify-content-center">
         <% default_image_used = !(fighter.fighter_photos.any? && fighter.fighter_photos[0].photo.bust.present?) %>
-        <%= image_tag(default_image_used ? "default_fighter1.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image my-auto") %>
+        <%= image_tag(default_image_used ? "default_fighter_bust.png" : fighter.fighter_photos[0].photo.bust.url, class: "img-fluid bust-image my-auto") %>
       </div>
     </div>
   </div>
