@@ -1,23 +1,33 @@
+<br>
 <div class="container">
-  <p><%= link_to I18n.t("articles_list"), blog_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <h1 class="article-title"><%= @article.title %></h1></p>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="breadcrumb">
+        <%= link_to I18n.t("articles_list"), blog_path, class:"text-red fs-3" %> 
+        <i class="fa fa-angle-right align-self-center mx-2 fs-3"></i>
+      </p>
+      <span class="article-title"><%= @article.title %></span>
+      <br>
+      <% if @article.photos.count != 0 %>
+        <%= render partial: 'carousel' %>
+      <% end %>
 
-  <% if @article.photos.count != 0 %>
-    <%= render partial: 'carousel' %>
-  <% end %>
+      <div class="article-description-block mt-4 fs-3">
+        <%= simple_format (@article.description) %>
+      </div>
 
-  <%= simple_format (@article.description), class:"article-description-block" %>
+      <% if policy(Article).edit? %>
+        <hr>
 
-  <!-- <p><%= "By #{@article.user.name}" %></p> -->
+        <div class="article-photo-form mt-4">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @article.photos.build} %>
+        </div>
 
-  <%#= render partial: 'photo', collection: @article.photos.except(@new_photo) %>
-  <% if policy(Article).edit? %>
-    <br>
-    <hr>
-    <div class="article-photo-form">
-      <%= render partial: 'photos/form', locals: {photo: @new_photo || @article.photos.build} %>
+        <div class="mt-3">
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-warning" %>
+          <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger ml-2" %>
+        </div>
+      <% end %>
     </div>
-
-    <%= link_to "Edit", edit_article_path(@article) %>
-    <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+  </div>
 </div>

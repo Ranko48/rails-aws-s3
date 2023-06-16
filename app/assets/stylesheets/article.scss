@@ -20,16 +20,23 @@
 }
 
 
+// .carousel-photo-for-art-index {
+//   width: 100%;
+//   height: auto;
+//   object-fit: cover;
+// }
+
 .carousel-photo-for-art-index {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
 }
 
 /* Styles for tablets and larger devices */
