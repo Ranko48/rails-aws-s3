@@ -54,6 +54,7 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(
       :title,
+      :description,
       :date,
       :location,
       fights_attributes: [:id, :fighter1_id, :fighter2_id, :weight_class, :finished, :_destroy]
