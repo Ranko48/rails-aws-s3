@@ -151,6 +151,10 @@ hr {
   height: 600px;
 }
 
+.fighter-bust {
+  height: 300px;
+}
+
 .swords {
   display: flex;
   justify-content: center;
@@ -266,6 +270,12 @@ hr {
 @media (max-width: 700px) {
   .carousel-inner {
     height: 10em;
+  }
+  .fighter-bust {
+    height: 8rem;
+  }
+  .versus-image {
+    max-height: 4rem;
   }
 }
 

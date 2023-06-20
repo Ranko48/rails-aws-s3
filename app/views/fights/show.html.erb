@@ -2,34 +2,49 @@
   <div class="row">
     <div class="col-lg-10 col-md-12 mx-auto mt-5">
       <div class="card bg-dark w-100 w-lg-80">
-
         <div class="card-body">
           <h1><%= @fight.event.title %> - <%= @fight.event.date %><%#= @fight.weight_class %></h1>
+
+          <% if @fight.event.description.present? %>
+            <p class="card-text">
+              <strong>Description of event:</strong>
+              <%= simple_format (@fight.event.description) %>
+            </p>
+          <% end %>
 
           <p class="card-text">
             <strong>Location:</strong>
             <a class="fs-3 gotham-link" href="https://www.google.com/maps/search/?api=1&query=<%= URI.encode_www_form_component(@fight.event.location) %>" target="_blank" title="View on Google Maps" class="gotham-link"><%= @fight.event.location %></a>
           </p>
 
+
           <h3 class="text-red"></h3>
 
+          <% fighter2 = Fighter.find(@fight.fighter1_id) %>
+          <% fighter1 = Fighter.find(@fight.fighter2_id) %>
 
-            <% fighter2 = Fighter.find(@fight.fighter1_id) %>
-            <% fighter1 = Fighter.find(@fight.fighter2_id) %>
-
-            <div class="d-flex justify-content-around mt-3 ">
-              <div class="col-4 text-center d-flex flex-column align-items-center">
-                <% default_image_used1 = !(fighter1.fighter_photos.any? && fighter1.fighter_photos[0].photo.bust.present?) %>
-                <%= image_tag(default_image_used1 ? "default_fighter.png" : fighter1.fighter_photos[0].photo.bust.url, class: "img-fluid event-bust-image") %>
-                <%= link_to fighter1.name, fighter_path(fighter1), title: "View fighter details", class: "gotham-link fs-2" %>
-              </div>
-              <span class="swords mx-2 col-2"><%= image_tag "versus.png", class:"versus-image bigg" %></span>
-              <div class="col-4 text-center d-flex flex-column align-items-center">
-                <% default_image_used2 = !(fighter2.fighter_photos.any? && fighter2.fighter_photos[0].photo.bust.present?) %>
-                <%= image_tag(default_image_used2 ? "default_fighter.png" : fighter2.fighter_photos[0].photo.bust.url, class: "img-fluid event-bust-image") %>
-                <%= link_to fighter2.name, fighter_path(fighter2), title: "View fighter details", class: "gotham-link fs-2" %>
-              </div>
+          <div class="d-flex justify-content-around mt-3 ">
+            <div class="col-4 text-center d-flex flex-column align-items-center">
+              <% default_image_used1 = !(fighter1.fighter_photos.any? && fighter1.fighter_photos[0].photo.bust.present?) %>
+              <%= image_tag(default_image_used1 ? "default_fighter.png" : fighter1.fighter_photos[0].photo.bust.url, class: "fighter-bust event-bust-image") %>
+              <%= link_to fighter1.name, fighter_path(fighter1), title: "View fighter details", class: "gotham-link fs-2" %>
             </div>
+            
+            <span class="swords mx-2 col-2"><%= image_tag "versus.png", class:"versus-image" %></span>
+
+            <div class="col-4 text-center d-flex flex-column align-items-center">
+              <% default_image_used2 = !(fighter2.fighter_photos.any? && fighter2.fighter_photos[0].photo.bust.present?) %>
+              <%= image_tag(default_image_used2 ? "default_fighter.png" : fighter2.fighter_photos[0].photo.bust.url, class: "fighter-bust event-bust-image") %>
+              <%= link_to fighter2.name, fighter_path(fighter2), title: "View fighter details", class: "gotham-link fs-2" %>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="card-text">
+            <strong>Statistics of the fight:</strong>
+          </p>
+        </div>
 
         <div class="card-body">
           <div class="mt-4">
@@ -39,7 +54,6 @@
             <%= link_to 'Back', :back, class: "btn btn-secondary" %>
           </div>
         </div>
-
       </div>
     </div>
   </div>
