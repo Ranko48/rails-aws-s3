@@ -1,16 +1,18 @@
 <div class="fixed-top navigation">
   <nav class="navbar navbar-row">
-    <div class="container-fluid">
-      <div class="mx-4">
-        <a class="navbar-brand mx-4 dis-no" href="/">
+    <div class="container-fluid d-flex justify-content-around">
+      <div class="dis-no">
+        <a class="navbar-brand" href="/">
           <%= image_tag "helmet1.png", class:"logo-img" %>
         </a>
       </div>
 
+      <div class="d-flex">
       <a class="navbar-brand text-white" href="/"><h2 class="main-title text-decoration-underline">Gotham Promotion</h2></a>
+      </div>
 
-      <div class="icons-lang mx-4 dis-no">
-        <div class="dis-no">
+      <div class="dis-no">
+        <div class=" icons-lang">
           <ul class="nav cont-lang-block mb-2 mb-md-0">
             <li>
               <a href="https://api.whatsapp.com/send?phone=19172150277", target="_blank", title="Whatsapp"><i class="fa fa-whatsapp contact-icon" aria-hidden="true"></i></a>
@@ -69,8 +71,9 @@
     <!--<div class="container-fluid burger"> -->
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <%= image_tag "helmet1.png", class:"logo-burger", alt:"Menu" %>
       </button>
+
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">

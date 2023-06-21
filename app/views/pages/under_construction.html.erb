@@ -1,44 +1,46 @@
 <div class="container mt-5">
   <div class="text-center">
-    <h1 class="main-title-uc text-center text-decoration-underline mb-5">Gotham Promotion</h1>
+    <h1 class="main-title-uc bg-dark text-center text-decoration-underline mb-5">Gotham Promotion</h1>
   </div>
-  <div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="d-flex justify-content-center">
+    <ul class="lang-construction">
+      <li class="dropdown ", id="lang-selector">
+        <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white',
+          data: {"bs-toggle": 'dropdown'} do %>
+          <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
+          <%= image_tag "#{locale}.png", class: "lang-icon" %>
+
+          <%= t I18n.locale %>
+        <% end %>
+
+        <ul class="dropdown-menu lang-menu">
+          <% I18n.available_locales.each do |locale| %>
+            <li>
+              <% if I18n.locale == locale %>
+                <span class="dropdown-item">
+                  <%= image_tag "#{locale}.png", class: "lang-icon" %>
+                  <%= t(I18n.locale) %>
+                </span>
+              <% else %>
+                <a href="<%= url_for(locale: locale) %>" class="dropdown-item">
+                  <%= image_tag "#{locale}.png", class: "lang-icon" %>
+                  <%= t(locale) %>
+                </a>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <br>
+  <div class="row justify-content-center align-items-center">
     <div class="col-10 col-md-8">
       <div class="table-responsive">
         <table class="table table-dark table-striped table-borderless fs-3">
           <tbody class="text-center">
             <tr>
-              <td>(EN) Website is under construction</td>
-            </tr>
-            <tr>
-              <td>Please check back later. We're working on creating a new and amazing site.</td>
-            </tr>
-            <tr>
-              <td><br></td>
-            </tr>
-            <tr>
-              <td>(ES) Sitio en desarrollo</td>
-            </tr>
-            <tr>
-              <td>Por favor, vuelva más tarde. Estamos trabajando en la creación de un sitio nuevo y sorprendente.</td>
-            </tr>
-            <tr>
-              <td><br></td>
-            </tr>
-            <tr>
-              <td>(PL) Strona w budowie</td>
-            </tr>
-            <tr>
-              <td>Proszę sprawdzić później. Pracujemy nad stworzeniem nowej i niesamowitej strony.</td>
-            </tr>
-            <tr>
-              <td><br></td>
-            </tr>
-            <tr>
-              <td>(RU) Сайт в разработке</td>
-            </tr>
-            <tr>
-              <td>Пожалуйста, зайдите позже. Мы работаем над созданием нового удивительного сайта.</td>
+              <td><%= simple_format (t "under_construction") %></td>
             </tr>
           </tbody>
         </table>

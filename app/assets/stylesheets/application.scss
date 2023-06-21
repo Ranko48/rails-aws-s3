@@ -23,9 +23,9 @@
  @import "fight";
  @import "hero";
 
-* {
+// * {
   // border: 1px silver solid;
-}
+// }
 
 body {
   font-size: 1.4em;
@@ -131,7 +131,7 @@ hr {
   color: red;
   position: relative;
   font-family: 'Headline Text', sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   left: 0;
   letter-spacing: 3px;
   width: 100%;
@@ -156,12 +156,19 @@ hr {
   color: red;
   position: relative;
   font-family: 'Headline Text', sans-serif;
-  font-size: 80px;
-  font-weight: 130%;
-  letter-spacing: 9px;
+  font-size: 3em;
+  // font-weight: 130%;
+  letter-spacing: 3px;
   background: -webkit-linear-gradient(#ff0000, #ff6666 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 600px) {
+  .main-title-uc {
+    font-size: 5em;
+    letter-spacing: 3px;
+  }
 }
 
 .versus-image {
@@ -282,9 +289,9 @@ hr {
 //   }
 // }
 
-.carousel-photo {
+// .carousel-photo {
   // height: 500px;
-}
+// }
 
 .carousel-inner {
   width: 100%;
@@ -310,4 +317,9 @@ hr {
   object-fit: cover;
   display: block;
   margin: 0 auto; /* Добавлено для выравнивания по центру */
+}
+
+.lang-construction {
+  padding-left: 0;
+  list-style-type: none;
 }

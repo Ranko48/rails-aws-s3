@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   // margin-left: 5rem;
+  margin-right: 0px;
 }
 
 .navbar {
@@ -21,7 +22,7 @@
 }
 
 .navbar-toggler {
-  border: none;
+  border: none !important;
 }
 
 .navbar-toggler-icon {
@@ -100,7 +101,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .dis-no {
     display: none;
   }
@@ -109,4 +110,8 @@
 .my-dropdown {
   flex-direction: column;
   text-align: center;
+}
+
+.logo-burger {
+  height: 3em;
 }
