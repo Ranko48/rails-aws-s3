@@ -83,9 +83,9 @@
           <li class="nav-item">
             <%= link_to I18n.t("about_us_title"), about_path, class:"nav-link active text-white" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown my-dropdown">
             <%= link_to "Events", events_path, class: "nav-link dropdown-toggle text-white", role: "button", "data-bs-toggle" => "dropdown", "aria-expanded" => "false" %>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu text-center">
               <% @last_events.each do |event| %>
                 <li><%= link_to event.title, event_path(event), class: "dropdown-item fs-5" %></li>
               <% end %>
@@ -96,9 +96,9 @@
           </li>
           <li class="nav-item">
             <% if action_name == "main" %>
-              <%= link_to "Merch", "#merch", class:"nav-link active text-white" %>
+              <%= link_to "Shop", "#shop", class:"nav-link active text-white" %>
             <% else %>
-              <%= link_to "Merch", merch_path, class:"nav-link active text-white" %>
+              <%= link_to "Shop", shop_path, class:"nav-link active text-white" %>
             <% end %>
           </li>
           <li class="nav-item">

@@ -53,13 +53,38 @@ body {
   }
 }
 
-.merch-block {
-  background-color: white;
-  max-width: 30%;
+.shop-block {
+  position: relative; /* Добавить свойство position: relative, чтобы дочерний абсолютный элемент был позиционирован относительно этого элемента */
   height: 400px;
+  overflow: hidden; /* Скрываем все, что выходит за пределы этого элемента */
+  
   img {
     height: 100%;
     object-fit: contain;
+  }
+  
+  .product-info {
+    opacity: 0;
+    border-radius: 5px;
+  }
+
+  &:hover .product-info {
+    opacity: 1;
+    position: absolute; /* Позиционируем абсолютно внутри .shop-block */
+    bottom: -100%; /* Перемещаем его за пределы видимой области снизу */
+    left: 0; right: 0; /* Расширяем на всю ширину */
+    background-color: rgba(0, 0, 0, 0.7); /* Задаем фон */
+    transition: 0.3s; /* Эффект анимации */
+    color: red; /* Цвет текста */
+    padding: 15px; /* Внутренние отступы */
+    bottom: 0; /* При наведении перемещаем элемент наверх */
+  }
+}
+
+@media (max-width: 700px) {
+  .product-info {
+    opacity: 1 !important;
+    background-color: rgba(0, 0, 0, 0.7); /* Задаем фон */
   }
 }
 

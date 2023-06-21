@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
 
     get '/videos', to: 'pages#videos'
-    get '/merch', to: 'pages#merch'
+    get '/shop', to: 'pages#shop'
     get '/about', to: 'pages#about'
     get '/blog', to: 'pages#blog'
     get '/terms', to: 'pages#terms'

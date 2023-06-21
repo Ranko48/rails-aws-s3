@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   def videos
   end
 
-  def merch
+  def shop
   end
 
   def under_construction
