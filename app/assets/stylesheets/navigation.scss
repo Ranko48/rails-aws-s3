@@ -113,5 +113,42 @@
 }
 
 .logo-burger {
+  position: relative;
   height: 3em;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 10%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(-30deg);
+  pointer-events: none;
+  z-index: 1;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-1000%) rotate(-30deg);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(2000%) rotate(-30deg);
+  }
 }
