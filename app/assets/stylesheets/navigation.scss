@@ -106,7 +106,7 @@
 
 @media (min-width: 668px) {
   .dis-no-desktop {
-    display: none;
+    display: none !important;
   }
 }
 
