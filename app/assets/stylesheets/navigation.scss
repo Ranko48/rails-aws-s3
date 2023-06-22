@@ -134,25 +134,44 @@
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 10%;
+  width: 6%;
   height: 200%;
   background: rgba(255, 255, 255, 0.1);
   transform: rotate(-30deg);
   pointer-events: none;
   z-index: 1;
-  animation: shine 3s infinite;
+  animation: shine 2.2s infinite;
 }
 
 @keyframes shine {
   0% {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-1000%) rotate(-30deg);
+    transform: translateX(-100%) rotate(-30deg);
   }
   50% {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(246, 108, 108);
   }
   100% {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(2000%) rotate(-30deg);
+    transform: translateX(3000%) rotate(-30deg);
   }
 }
+
+// .star-effect {
+//   position: absolute !important;
+//   top: 0;
+//   right: 0;
+//   height: 1rem;
+//   opacity: 0;
+//   animation: blink 5s infinite;
+// }
+
+// @keyframes blink {
+//   40% {opacity: 0;}
+//   50% {opacity: 1;}
+//   60% {opacity: 0;}
+// }
+
+// .logo-burger-wrapper {
+//   position: relative; /* Обязательно для правильного позиционирования звезды */
+// }
