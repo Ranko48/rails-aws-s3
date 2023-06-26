@@ -3,6 +3,13 @@
   background-color: #232122;
 }
 
+
+@media (max-width: 660px) {
+  .navigation {
+    position: relative;
+  }
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;

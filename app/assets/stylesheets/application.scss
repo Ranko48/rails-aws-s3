@@ -28,13 +28,19 @@
 // }
 
 body {
-  font-size: 1.8em;
+  font-size: 1.4em;
   font-family: 'Alumni Sans', sans-serif;
   color: white;
   // background-image: url("hero.jpg");
   // background-size: auto 1400px;
   // background-repeat: no-repeat;
   background-color: #232122;
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 1.8em;
+  }
 }
 
 .bg-dark-opacity {
@@ -364,4 +370,32 @@ hr {
 
 .text-justify {
   text-align: justify;
+}
+
+#myBtn {
+  line-height: 1em;
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 30px; /* Place the button at the bottom of the page */
+  right: 40px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  opacity: 70%;
+}
+
+
+@media (min-width: 600px) {
+  #myBtn {
+    opacity: 50%;
+  }
+  #myBtn:hover {
+    opacity: 1;
+  }
 }
