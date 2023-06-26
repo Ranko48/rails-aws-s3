@@ -35,33 +35,33 @@
       <%= yield %>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        let addFightButton = document.getElementById("add-fight");
-        let fightsWrapper = document.getElementById("fights-wrapper");
-        let newFightTemplate = document.getElementById("new-fight-template");
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   // let addFightButton = document.getElementById("add-fight");
+      //   let fightsWrapper = document.getElementById("fights-wrapper");
+      //   let newFightTemplate = document.getElementById("new-fight-template");
 
-        addFightButton.addEventListener("click", (e) => {
-          e.preventDefault();
+      //   addFightButton.addEventListener("click", (e) => {
+      //     e.preventDefault();
 
-          let newIndex = new Date().getTime();
-          let newFightFields = newFightTemplate.innerHTML.replace(/new_fight/g, newIndex);
+      //     let newIndex = new Date().getTime();
+      //     let newFightFields = newFightTemplate.innerHTML.replace(/new_fight/g, newIndex);
 
-          fightsWrapper.insertAdjacentHTML("beforeend", newFightFields);
-        });
-      });
+      //     fightsWrapper.insertAdjacentHTML("beforeend", newFightFields);
+      //   });
+      // });
 
-      document.addEventListener("DOMContentLoaded", function() {
-        // Получаем элементы заголовка и скрытого текста
-        var heading = document.querySelector(".heading");
-        var hiddenText = document.querySelector(".hidden-text");
+      // document.addEventListener("DOMContentLoaded", function() {
+      //   // Получаем элементы заголовка и скрытого текста
+      //   var heading = document.querySelector(".heading");
+      //   var hiddenText = document.querySelector(".hidden-text");
 
-        // Добавляем обработчик события клика на заголовке
-        heading.addEventListener("click", function() {
-          // Переключаем класс `hidden` у скрытого текста
-              hiddenText.classList.toggle("hidden");
+      //   // Добавляем обработчик события клика на заголовке
+      //   heading.addEventListener("click", function() {
+      //     // Переключаем класс `hidden` у скрытого текста
+      //         hiddenText.classList.toggle("hidden");
 
-        });
-      });
+      //   });
+      // });
       function parallax() {
         var section = document.querySelector('.parallax-section');
         var y = window.pageYOffset;
