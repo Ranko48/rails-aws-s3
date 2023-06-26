@@ -1,9 +1,9 @@
-<p class="mt-4"><%= link_to I18n.t("articles_list"), blog_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_article" %></p>
+<p class="mt-4 slide-up"><%= link_to I18n.t("articles_list"), blog_path, class:"red" %> <i class="fa fa-angle-right mx-2"></i> <%= t "fresh_article" %></p>
 
-<h1 class="article-title"><%= link_to @last_article.title, article_path(@last_article), class:"red" %></h1>
+<h1 class="article-title slide-up"><%= link_to @last_article.title, article_path(@last_article), class:"red" %></h1>
 
 <% if @last_article.photos.count != 0 %>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide slide-up" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @last_article.photos.except(@new_photo).each_with_index do |photo, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
@@ -22,5 +22,4 @@
   </div>
 
 <% end %>
-<br>
-<%= simple_format (@last_article.description), class:"article-description-block bg-dark-opacity" %>
+<%= simple_format (@last_article.description), class:"article-description-block bg-dark-opacity mt-2" %>

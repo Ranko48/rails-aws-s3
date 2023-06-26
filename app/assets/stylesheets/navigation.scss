@@ -34,6 +34,7 @@
 
 
 .nav-link {
+  font-size: 1.4rem;
   color: white !important;
   font-weight: bold;
   text-transform: uppercase;
@@ -98,13 +99,13 @@
   }
 }
 
-@media (max-width: 668px) {
+@media (max-width: 968px) {
   .dis-no {
     display: none;
   }
 }
 
-@media (min-width: 668px) {
+@media (min-width: 768px) {
   .dis-no-desktop {
     display: none !important;
   }

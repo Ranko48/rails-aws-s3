@@ -25,7 +25,6 @@
       <div class="parallax-section">
         <div class="hero-section" data-parallax="scroll" data-speed="1">
           <div class="hero-image"></div>
-          <h1 class="hero-title position-absolute start-50 translate-middle"><%= t "unleash" %></h1>
         </div>
       </div>
     <% end %>
@@ -88,7 +87,7 @@
         var y = window.pageYOffset;
         var height = section.offsetHeight;
         if (y < height) {
-          section.style.backgroundPosition = '0% ' + (10 + y/4) + '%';
+          section.style.backgroundPosition = '0% ' + (10 + y/6) + '%';
         }
       }
 
@@ -96,6 +95,21 @@
         window.addEventListener('scroll', throttle(parallax, 20));
       }
 
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            } else {
+              entry.target.classList.remove("active");
+            }
+          });
+        });
+
+        document.querySelectorAll(".slide-up").forEach((element) => {
+          observer.observe(element);
+        });
+      });
 
     </script>
   </body>

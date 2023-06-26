@@ -28,7 +28,7 @@
 // }
 
 body {
-  font-size: 1.4em;
+  font-size: 1.8em;
   font-family: 'Alumni Sans', sans-serif;
   color: white;
   // background-image: url("hero.jpg");
@@ -39,6 +39,10 @@ body {
 
 .bg-dark-opacity {
   background-color: rgba(35, 33, 34, 0.5);
+}
+
+.my-custom-shadow {
+  box-shadow: 0 .5rem 1rem rgba(35, 33, 34, 0.3);  /* Измените значения здесь */
 }
 
 .icons-lang {
@@ -131,9 +135,9 @@ hr {
   color: red;
   position: relative;
   font-family: 'Headline Text', sans-serif;
-  font-size: 2em;
+  font-size: 3.5rem;
   left: 0;
-  letter-spacing: 3px;
+  // letter-spacing: 3px;
   width: 100%;
   text-align: center;
   background: -webkit-linear-gradient(#ff0000, #ff6666 );
@@ -141,14 +145,27 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 660px) {
   .main-title {
-    font-size: 80px;
-    left: 12%;
-    letter-spacing: 9px;
+    font-size: 4em;
   }
 }
 
+@media (min-width: 990px) {
+  .main-title {
+    font-size: 4em;
+    left: 15%;
+    letter-spacing: 3px;
+    // font-weight: 1.2;
+    // margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .main-title {
+    font-size: 5em;
+  }
+}
 
 .main-title-uc {
   // margin-top: 18px;
@@ -331,3 +348,17 @@ hr {
   padding-left: 0;
   list-style-type: none;
 }
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 1s ease;
+  visibility: hidden;
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
