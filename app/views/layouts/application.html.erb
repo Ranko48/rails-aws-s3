@@ -25,7 +25,7 @@
       <div class="parallax-section">
         <div class="hero-section" data-parallax="scroll" data-speed="1">
           <div class="hero-image"></div>
-          <h1 class="hero-title position-absolute top-100 start-50 translate-middle"><%= t "unleash" %></h1>
+          <h1 class="hero-title position-absolute start-50 translate-middle"><%= t "unleash" %></h1>
         </div>
       </div>
     <% end %>
@@ -62,8 +62,29 @@
 
       //   });
       // });
+      function throttle(func, wait) {
+        var lastFunc, lastRan;
+        return function() {
+          var context = this;
+          var args = arguments;
+          if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+              if ((Date.now() - lastRan) >= wait) {
+                func.apply(context, args);
+                lastRan = Date.now();
+              }
+            }, wait - (Date.now() - lastRan));
+          }
+        }
+      }
+
       function parallax() {
         var section = document.querySelector('.parallax-section');
+        if (!section) return;
         var y = window.pageYOffset;
         var height = section.offsetHeight;
         if (y < height) {
@@ -71,7 +92,10 @@
         }
       }
 
-      window.addEventListener('scroll', parallax);
+      if (!('ontouchstart' in window || navigator.msMaxTouchPoints) && window.innerWidth > 768) {
+        window.addEventListener('scroll', throttle(parallax, 20));
+      }
+
 
     </script>
   </body>

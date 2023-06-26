@@ -12,11 +12,13 @@
   color: rgba(255, 0, 0, 0.943);
   font-weight: bold;
   font-size: 5rem;
+  top: 100%;
 }
 
 @media (max-width: 968px) {
   .hero-title {
     font-size: 3rem;
+    top: 60%;
   }
 }
 
@@ -30,4 +32,13 @@
   background-image: url("hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: 765px) {
+  .parallax-section {
+    height: 19rem;
+    background-image: url("hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
