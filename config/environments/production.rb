@@ -1,8 +1,6 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.force_ssl = true
-
   # config.action_controller.asset_host = "`http`s://s3.amazonaws.com/gotham-pictures"
   # картинки с S3 AWS
 
