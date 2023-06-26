@@ -2,7 +2,7 @@ es:
   hello: "Hola mundo"
   terms: "Términos de uso"
   politics: "Política"
-  about_us_title: "Acerca de Gotham Promotion"
+  about_us_title: "Acerca de Gotham"
   about_us: "Bienvenidos a Gotham Promotion, una empresa dedicada a promover los deportes de combate y apoyar a la próxima generación de luchadores.
     \n\r
     Nuestra misión es crear una plataforma donde los luchadores amateurs y profesionales puedan demostrar sus habilidades y alcanzar nuevas alturas en sus carreras.
@@ -28,6 +28,7 @@ es:
   unleash: "LIBERA TU PODER"
   events: "Eventos"
   fighters: "Luchadores"
+  athletes: "Atletas"
   articles_list: "Lista de artículos"
   fresh_article: "Articulo nuevo"
   videos_list: "Todos los videos"

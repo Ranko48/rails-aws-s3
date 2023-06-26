@@ -33,7 +33,7 @@ en:
   hello: "Hello world"
   terms: "Terms of Use"
   politics: "Politics"
-  about_us_title: "About Gotham Promotion"
+  about_us_title: "About Gotham"
   about_us: "Welcome to Gotham Promotion - a company dedicated to promoting combat sports and supporting the next generation of fighters.
     \n\r
     Our mission is to create a platform where enthusiasts and professionals can showcase their skills and achieve new heights in their careers. We host events in various formats, including MMA, Jiu-Jitsu, and Judo, and provide a safe and fair environment for our fighters.
@@ -59,6 +59,7 @@ en:
   unleash: "UNLEASH YOUR POWER"
   events: "Events"
   fighters: "Fighters"
+  athletes: "Athletes"
   articles_list: "Articles list"
   videos_list: "Videos list"
   fresh_article: "Fresh article"

@@ -2,7 +2,7 @@ pl:
   hello: "Witaj świecie"
   terms: "Warunki użytkowania"
   politics: "Polityka"
-  about_us_title: "O Gotham Promotion"
+  about_us_title: "O Gotham"
   about_us: "Witaj w Gotham Promotion, firmie dedykowanej promocji sportów walki i wsparciu następnej generacji zawodników.
     \n\r
     Nasza misja polega na stworzeniu platformy, na której amatorscy i zawodowi zawodnicy mogą zaprezentować swoje umiejętności i osiągnąć nowe szczyty w swoich karierach. Organizujemy wydarzenia w różnych formatach, w tym MMA, jiu-jitsu i judo, zapewniając bezpieczne i uczciwe środowisko dla naszych zawodników do rywalizacji.
@@ -28,6 +28,7 @@ pl:
   unleash: "UWOLNIJ SWOJĄ MOC"
   events: "Wydarzenia"
   fighters: "Wojownicy"
+  athletes: "Sportowcy"
   articles_list: "Lista artykułów"
   fresh_article: "Świeży artykuł"
   videos_list: "Wszystkie filmy"
