@@ -278,12 +278,15 @@ hr {
 }
 
 .contact-icon {
-  margin-right: 8px;
+  font-size: 1.5rem !important;
+  margin: auto 6px;
   color: red;
-  &:hover {
-    font-size: 1.4em;
-    transition: all ease .2s;
-  }
+  transition: transform 0.3s ease, color 0.3s ease;  /* добавим переход */
+}
+
+.contact-icon:hover {
+  transform: scale(1.4);  /* при наведении увеличиваем иконку */
+  color: rgb(187, 17, 17);  /* меняем цвет иконки при наведении */
 }
 
 .cont-lang-block {
