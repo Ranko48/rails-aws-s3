@@ -1,6 +1,6 @@
 <br>
 <div class="">
-  <h1>Fighters</h1>
+  <h1><%= t "athletes" %></h1>
   <% if current_user && current_user.admin? %>
     <%= link_to 'New Fighter', new_fighter_path %>
   <% end %>
@@ -13,6 +13,7 @@
     </div>
   </div>
 
+<!--
   <table class="table table-dark table-responsive table-striped table-hover text-white">
     <thead>
       <tr>
@@ -42,5 +43,6 @@
       <% end %>
     </tbody>
   </table>
+-->
   <br>
 </div>
