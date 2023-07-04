@@ -4,8 +4,8 @@
   </div>
   <div class="d-flex justify-content-center">
     <ul class="lang-construction">
-      <li class="dropdown ", id="lang-selector">
-        <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white',
+      <li class="dropdown", id="lang-selector">
+        <%= link_to '#', id: 'lang-selector', class: 'nav-link px-2 dropdown-toggle text-white fs-3',
           data: {"bs-toggle": 'dropdown'} do %>
           <%= tag.div '', class: "flag #{I18n.locale}-flag mt-1" %>
           <%= image_tag "#{locale}.png", class: "lang-icon" %>
@@ -15,7 +15,7 @@
 
         <ul class="dropdown-menu lang-menu">
           <% I18n.available_locales.each do |locale| %>
-            <li>
+            <li class="fs-4">
               <% if I18n.locale == locale %>
                 <span class="dropdown-item">
                   <%= image_tag "#{locale}.png", class: "lang-icon" %>
@@ -44,6 +44,11 @@
             </tr>
           </tbody>
         </table>
+        <br>
+        <div class="border-top text-center mx-4 fs-3">
+          <p class="my-4"><%= t "see_current_version" %></p>
+          <%= link_to I18n.t("go_to_site"), '/main', class: 'btn btn-lg btn-danger' %>
+        </div>
       </div>
     </div>
   </div>
