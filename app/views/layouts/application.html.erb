@@ -98,7 +98,7 @@
         window.addEventListener('scroll', throttle(parallax, 20));
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("turbolinks:load", () => {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
