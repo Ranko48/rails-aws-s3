@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '184.72.192.20', user: 'deploy', roles: %w{app db web}
+server '3.88.26.140', user: 'deploy', roles: %w{app db web}
 
 set :default_env, {
   'SECRET_KEY_BASE' => '74adfdf4e982b27878b60609508d909192ba583a69b5fe5e883cd43698d9baf2fdb3a29a947149c3f24dba3651e0e5dd82db24a5abafa53aeebf78fffb958817'
