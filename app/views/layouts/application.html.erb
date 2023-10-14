@@ -136,9 +136,11 @@
       });
     </script>
     </div>
-    <div>
-      <%= render "layouts/footer" %>
-    </div>
 
+    <% if action_name != "under_construction" %>
+      <div>
+        <%= render "layouts/footer" %>
+      </div>
+    <% end %>
   </body>
 </html>
