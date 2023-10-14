@@ -35,7 +35,6 @@
     <div class="container">
       <%= content_tag :div, flash[:alert], class: "text-center fs-3 bg-danger" if flash[:alert] %>
       <%= yield %>
-
     <script>
       // document.addEventListener("DOMContentLoaded", () => {
       //   // let addFightButton = document.getElementById("add-fight");
@@ -136,5 +135,10 @@
         // ваш код для добавления класса .active
       });
     </script>
+    </div>
+    <div>
+      <%= render "layouts/footer" %>
+    </div>
+
   </body>
 </html>
