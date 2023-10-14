@@ -1,5 +1,9 @@
 .rrr {
   width: 70% !important;
+
+  @media (max-width: 1000px) {
+    width: 100% !important;
+  }
 }
 
 .navigation {
